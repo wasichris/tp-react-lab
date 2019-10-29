@@ -65,7 +65,10 @@ function getWebpackAliases (options = {}) {
   const baseUrl = options.baseUrl
 
   if (!baseUrl) {
-    return {}
+    return {
+      // 設定別名，配置 module 如何解析
+      '@src': path.resolve(__dirname, '../src/')
+    }
   }
 
   const baseUrlResolved = path.resolve(paths.appPath, baseUrl)

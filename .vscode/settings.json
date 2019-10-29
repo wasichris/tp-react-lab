@@ -1,0 +1,6 @@
+{
+    /* 匹配 webpack resolve alias 設定來顯示路徑下檔案 */
+    "path-autocomplete.pathMappings": {
+        "@src": "${folder}/src", // alias for @src
+    }
+}
