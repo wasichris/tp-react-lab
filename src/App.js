@@ -7,8 +7,8 @@ import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
 import Home from '@src/views/Home/index'
-import Example01 from '@src/views/Example01/index'
-import Example02 from '@src/views/Example02/index'
+import Practice01 from '@src/views/Practice01/index'
+import Practice02 from '@src/views/Practice02/index'
 
 class App extends React.Component {
   constructor (props) {
@@ -39,8 +39,8 @@ class App extends React.Component {
               {/* nav */}
               <div className='app-header__nav'>
                 <div className='app-header__nav-item'> <Link to='/'>Home</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/E1'>Example01</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/E2'>Example02</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/P1'>Practice01</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/P2'>Practice02</Link> </div>
               </div>
 
             </div>
@@ -53,12 +53,12 @@ class App extends React.Component {
               {/* views */}
               <Switch>
 
-                <Route path='/E1'>
-                  <Example01 />
+                <Route path='/P1'>
+                  <Practice01 />
                 </Route>
 
-                <Route path='/E2'>
-                  <Example02 />
+                <Route path='/P2'>
+                  <Practice02 />
                 </Route>
 
                 <Route path='/'>
