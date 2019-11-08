@@ -1,14 +1,19 @@
 import '@src/assets/css/app.scss'
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { bindActionCreators, compose } from 'redux'
 import { connect } from 'react-redux'
 import appModel from '@src/models/app'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
 import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
-import Home from '@src/views/Home/index'
-import Practice01 from '@src/views/Practice01/index'
-import Practice02 from '@src/views/Practice02/index'
+
+// 動態載入頁面組件，使用 webpack magic comments 定義各自 chunk name 分散需載入的資源
+const Home = lazy(() => import(/* webpackChunkName: "home" */ '@src/views/Home/index'))
+const Practice01 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice01/index'))
+const Practice02 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice02/index'))
+
+// 動態載入期間顯示的畫面組件
+const LoadingMask = () => <div />
 
 class App extends React.Component {
   constructor (props) {
@@ -51,22 +56,13 @@ class App extends React.Component {
             <div className='app-body__container'>
 
               {/* views */}
-              <Switch>
-
-                <Route path='/P1'>
-                  <Practice01 />
-                </Route>
-
-                <Route path='/P2'>
-                  <Practice02 />
-                </Route>
-
-                <Route path='/'>
-                  <Home />
-                </Route>
-
-              </Switch>
-
+              <Suspense fallback={<LoadingMask />}>
+                <Switch>
+                  <Route path='/P1' component={Practice01} />
+                  <Route path='/P2' component={Practice02} />
+                  <Route path='/' component={Home} />
+                </Switch>
+              </Suspense>
             </div>
           </div>
 
