@@ -2,10 +2,13 @@ import '@src/assets/css/app.scss'
 import React from 'react'
 import { bindActionCreators, compose } from 'redux'
 import { connect } from 'react-redux'
-import logo from '@src/assets/images/logo.svg'
 import appModel from '@src/models/app'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
+import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import Home from '@src/views/Home/index'
+import Example01 from '@src/views/Example01/index'
+import Example02 from '@src/views/Example02/index'
 
 class App extends React.Component {
   constructor (props) {
@@ -22,32 +25,59 @@ class App extends React.Component {
   }
 
   render () {
-    const { requestCount } = this.props
     return (
-      <div className='app'>
-        <header className='app-header'>
-          <img src={logo} className='app-logo' alt='logo' />
-          <p> {requestCount} </p>
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className='app-link'
-            href='https://reactjs.org'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-          Learn React
-          </a>
-        </header>
-      </div>
+      <Router>
+        <div className='app'>
+
+          {/* header */}
+          <header className='app-header'>
+            <div className='app-header__container'>
+
+              {/* logo */}
+              <div className='app-header__logo'> ThinkPower </div>
+
+              {/* nav */}
+              <div className='app-header__nav'>
+                <div className='app-header__nav-item'> <Link to='/'>Home</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/E1'>Example01</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/E2'>Example02</Link> </div>
+              </div>
+
+            </div>
+          </header>
+
+          {/* body */}
+          <div className='app-body'>
+            <div className='app-body__container'>
+
+              {/* views */}
+              <Switch>
+
+                <Route path='/E1'>
+                  <Example01 />
+                </Route>
+
+                <Route path='/E2'>
+                  <Example02 />
+                </Route>
+
+                <Route path='/'>
+                  <Home />
+                </Route>
+
+              </Switch>
+
+            </div>
+          </div>
+
+        </div>
+      </Router>
     )
   }
 }
 
 App.propTypes = {
-  initApp: PropTypes.func,
-  requestCount: PropTypes.number
+  initApp: PropTypes.func
 }
 
 const mapStateToProps = state => ({
