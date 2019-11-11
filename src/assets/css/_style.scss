@@ -71,7 +71,48 @@ a {
 
   &__container {
     display: block;
-    padding: 20px;
+    padding: 0 20px;
     width: $app-width;
   }
+}
+
+// =================== page ======================
+
+.page-desc {
+  font-size: 15px;
+}
+
+.page-section {
+  font-size: 16px;
+  background: rgb(207, 207, 207);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+  color: $text-color-dark;
+}
+
+// =================== input ======================
+
+.tp-radio {
+  padding-bottom: 3px;
+
+  &__label {
+    padding-left: 5px;
+  }
+}
+
+.tp-checkbox {
+  padding-bottom: 3px;
+
+  &__label {
+    padding-left: 5px;
+  }
+}
+
+// =================== other ======================
+
+.hint {
+  padding-top: 5px;
+  font-size: 13px;
+  color: $hint-color;
 }
