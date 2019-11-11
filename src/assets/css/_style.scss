@@ -116,3 +116,19 @@ a {
   font-size: 13px;
   color: $hint-color;
 }
+
+.bundary {
+  border: 1px dashed $bundary-color;
+  margin: 10px 0;
+  padding: 20px 10px 10px 10px;
+  position: relative;
+  background: $bundary-bg-color;
+
+  &__tag {
+    color: $bundary-color;
+    position: absolute;
+    right: 10px;
+    font-size: 12px;
+    top: 5px;
+  }
+}
