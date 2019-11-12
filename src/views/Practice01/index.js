@@ -1,4 +1,5 @@
 import React from 'react'
+import TpSection from '@src/components/TpSection/index'
 
 class Practice01 extends React.Component {
   constructor (props) {
@@ -24,13 +25,13 @@ class Practice01 extends React.Component {
         </p>
 
         {/* section 1 - input */}
-        <div className='page-section'>
+        <TpSection>
           <div><input type='text' value={inputValue} onChange={this.handleInput} /> </div>
           <div className='hint'>您輸入的資料: {inputValue} </div>
-        </div>
+        </TpSection>
 
         {/* section 2 - radio */}
-        <div className='page-section'>
+        <TpSection>
           <div className='tp-radio'>
             <input type='radio' id='pm' name='職稱' value='pm' />
             <label htmlFor='pm' className='tp-radio__label'>project manager</label>
@@ -47,10 +48,10 @@ class Practice01 extends React.Component {
           </div>
 
           <div className='hint'>您選擇的資料: OOO </div>
-        </div>
+        </TpSection>
 
         {/* section 3 - checkbox */}
-        <div className='page-section'>
+        <TpSection>
           <div className='tp-checkbox'>
             <input type='checkbox' id='bike' name='vehicle' value='bike' />
             <label htmlFor='bike' className='tp-checkbox__label'>I have a bike</label>
@@ -67,10 +68,10 @@ class Practice01 extends React.Component {
           </div>
 
           <div className='hint'>您選擇的資料: OOO </div>
-        </div>
+        </TpSection>
 
         {/* section 4 - option */}
-        <div className='page-section'>
+        <TpSection>
           <select>
             <option value=''>Please Select</option>
             <option value='volvo'>Volvo</option>
@@ -80,7 +81,7 @@ class Practice01 extends React.Component {
           </select>
 
           <div className='hint'>您選擇的資料: OOO </div>
-        </div>
+        </TpSection>
 
       </>
     )

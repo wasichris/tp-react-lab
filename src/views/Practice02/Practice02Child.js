@@ -1,5 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import TpBoundary from '@src/components/TpBoundary/index'
 
 class Practice02Child extends React.Component {
   constructor (props) {
@@ -28,16 +29,14 @@ class Practice02Child extends React.Component {
     const { internalValue } = this.state
 
     return (
-      <div className='bundary'>
-        <div className='bundary__tag'>child component</div>
+      <TpBoundary tag='child component'>
         <div>變動資料可通知父層組件來同步資料</div>
         <div><input type='text' value={internalValue} onChange={this.handleInternalValueChange} /></div>
         <div className='hint'>
           外部傳入的數值(prop): {value} <br />
           內部使用的數值(state): {internalValue}
         </div>
-
-      </div>
+      </TpBoundary>
     )
   }
 }
