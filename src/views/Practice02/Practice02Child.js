@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 
-class Practice02Son extends React.Component {
+class Practice02Child extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
@@ -29,7 +29,7 @@ class Practice02Son extends React.Component {
 
     return (
       <div className='bundary'>
-        <div className='bundary__tag'>sub component</div>
+        <div className='bundary__tag'>child component</div>
         <div>變動資料可通知父層組件來同步資料</div>
         <div><input type='text' value={internalValue} onChange={this.handleInternalValueChange} /></div>
         <div className='hint'>
@@ -42,9 +42,9 @@ class Practice02Son extends React.Component {
   }
 }
 
-Practice02Son.propTypes = {
+Practice02Child.propTypes = {
   value: PropTypes.string,
   onValueChange: PropTypes.func
 }
 
-export default Practice02Son
+export default Practice02Child

@@ -1,5 +1,5 @@
 import React from 'react'
-import Practice02Son from './Practice02Son'
+import Practice02Child from './Practice02Child'
 
 class Practice02 extends React.Component {
   constructor (props) {
@@ -33,7 +33,7 @@ class Practice02 extends React.Component {
           <input type='text' value={phone} onChange={this.handlePhoneChange} />
           <div className='hint'> 內部使用的數值(state): {phone} </div>
           {/* 子組件 */}
-          <Practice02Son value={phone} onValueChange={this.handleSonPhoneChange} />
+          <Practice02Child value={phone} onValueChange={this.handleSonPhoneChange} />
 
         </div>
 
