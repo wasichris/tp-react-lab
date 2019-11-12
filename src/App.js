@@ -12,6 +12,7 @@ const Home = lazy(() => import(/* webpackChunkName: "home" */ '@src/views/Home/i
 const Practice01 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice01/index'))
 const Practice02 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice02/index'))
 const Practice03 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice03/index'))
+const Practice04 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice04/index'))
 
 // 動態載入期間顯示的畫面組件
 const LoadingMask = () => <div />
@@ -48,6 +49,7 @@ class App extends React.Component {
                 <div className='app-header__nav-item'> <Link to='/P1'>Practice01</Link> </div>
                 <div className='app-header__nav-item'> <Link to='/P2'>Practice02</Link> </div>
                 <div className='app-header__nav-item'> <Link to='/P3'>Practice03</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/P4'>Practice04</Link> </div>
               </div>
 
             </div>
@@ -63,6 +65,7 @@ class App extends React.Component {
                   <Route path='/P1' component={Practice01} />
                   <Route path='/P2' component={Practice02} />
                   <Route path='/P3' component={Practice03} />
+                  <Route path='/P4' component={Practice04} />
                   <Route path='/' component={Home} />
                 </Switch>
               </Suspense>
