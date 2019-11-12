@@ -5,36 +5,35 @@ class Practice02 extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      magicNum: 10,
-      magicNumMsg: ''
+      phone: '0922123123'
     }
   }
 
-  handleInvalidNum = (num) => {
-    this.setState({ ...this.state, magicNumMsg: `the value '${num}' is invalid!!` })
+  handleSonPhoneChange = newPhone => {
+    this.setState({ ...this.state, phone: newPhone })
   }
 
-  handleMagicNumChange = e => {
-    this.setState({ ...this.state, magicNum: e.target.value, magicNumMsg: '' })
+  handlePhoneChange = e => {
+    this.setState({ ...this.state, phone: e.target.value })
   }
 
   render () {
-    const { magicNum, magicNumMsg } = this.state
+    const { phone } = this.state
     return (
       <>
         <h3> 父子組件溝通 </h3>
         <p className='page-desc'>
-          熟悉父子組件溝通方式，父祖件包含一個輸入框，請傳遞輸入框數值及 handleInvalidNum callback 方法至子組件，於子組件即時顯示數值，並在數值小於 0 時呼叫 handleInvalidNum callback 方法通知父組件。
+          熟悉父子組件溝通方式(單向資料流)，實現父子組件資料同步需求；如下父組件包含一個 phone 輸入框，變動數值時將值透過 props 傳遞至子組件中，子組件將值存放在 state 保存，並可透過子組件的輸入框異動 state 值，並且在異動時通知父組件同步數值。
         </p>
 
         <div className='page-section'>
 
           {/* 父組件-輸入框 */}
-          <input type='number' value={magicNum} onChange={this.handleMagicNumChange} />
-          {magicNumMsg && <div className='hint'>{magicNumMsg} </div>}
-
+          <div>請輸入手機號碼(phone)</div>
+          <input type='text' value={phone} onChange={this.handlePhoneChange} />
+          <div className='hint'> 內部使用的數值(state): {phone} </div>
           {/* 子組件 */}
-          <Practice02Son />
+          <Practice02Son value={phone} onValueChange={this.handleSonPhoneChange} />
 
         </div>
 
