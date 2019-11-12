@@ -6,19 +6,19 @@ class Practice03Child extends React.Component {
   render () {
     return (
       <TpBoundary tag='child component'>
-        請於子組件各指定區塊插入對應文字
+        子層組件
 
         <TpBoundary tag='top'>
-          請由父組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
         </TpBoundary>
 
         <TpBoundary tag='middle'>
-          請由父組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
           {this.props.children}
         </TpBoundary>
 
         <TpBoundary tag='bottom'>
-          請由父組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
         </TpBoundary>
 
       </TpBoundary>
