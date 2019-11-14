@@ -27,7 +27,7 @@ class Practice03Child extends React.Component {
 }
 
 Practice03Child.propTypes = {
-  children: PropTypes.node
+  children: PropTypes.element
 }
 
 export default Practice03Child

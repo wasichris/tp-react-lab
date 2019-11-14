@@ -19,7 +19,7 @@ class Practice01 extends React.Component {
 
     return (
       <>
-        <h3> 輸入控制 </h3>
+        <h1> 輸入控制 </h1>
         <p className='page-desc'>
           熟悉輸入元素的控制方式，請將輸入資訊存放於 state 中，並修改時即時顯示於輸入框下方。
         </p>

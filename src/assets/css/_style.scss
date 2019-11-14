@@ -5,14 +5,20 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-color: $body-bg-color;
+  font-size: 15px;
 }
 
 a {
   color: $link-color;
+  text-decoration: none;
 }
 
 input {
   margin: 5px 0 0 0;
+}
+
+p, ul, li {
+  line-height: 1.5;
 }
 
 // =================== app ======================
@@ -23,7 +29,6 @@ input {
 
   min-height: 100vh;
   color: $text-color;
-  font-size: calc(10px + 2vmin);
 }
 
 .app-logo {
@@ -46,6 +51,7 @@ input {
   }
 
   &__logo {
+    font-size: 22px;
     font-weight: bold;
   }
 
@@ -98,7 +104,6 @@ input {
 // =================== input ======================
 
 .tp-radio {
-  padding-bottom: 3px;
 
   &__label {
     padding-left: 5px;
@@ -106,7 +111,6 @@ input {
 }
 
 .tp-checkbox {
-  padding-bottom: 3px;
 
   &__label {
     padding-left: 5px;
@@ -118,15 +122,18 @@ input {
 .hint {
   padding-top: 5px;
   font-size: 13px;
+  line-height: 1.5;
   color: $hint-color;
 }
 
 .bundary {
+  font-size: 16px;
   border: 1px dashed $bundary-color;
   margin: 15px 0;
   padding: 20px 10px 10px 10px;
   position: relative;
   background: $bundary-bg-color;
+  color: $text-color-dark;
 
   &__tag {
     color: $bundary-color;
