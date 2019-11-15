@@ -58,7 +58,7 @@ const action = {
  */
 function * initAppSaga ({ payload }) {
   try {
-    console.log('%c init app ', 'background-color: #3A88AE; color: white;font-size: 14px; font-weight: bold;')
+    console.log('%c init app ', 'background-color: #3A88AE; color: white;font-size: 14px; font-weight: bold;', `v${process.env.npm_package_version}`)
     // 進入 app 需要初始化的工作
     // ....
   } catch (error) {

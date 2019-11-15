@@ -76,7 +76,13 @@ function getClientEnvironment (publicUrl) {
         // For example, <img src={process.env.PUBLIC_URL + '/img/logo.png'} />.
         // This should only be used as an escape hatch. Normally you would put
         // images into the `src` and `import` them in code to get their paths.
-        PUBLIC_URL: publicUrl
+        PUBLIC_URL: publicUrl,
+        // 外部傳入 MODE 來定義不同建置目標所使用的常數
+        MODE: process.env.MODE,
+        // 外部傳入 ROOT_PATH 來定義不同建置目標的佈署的 sub directory 資訊，用以定義 public path 使用
+        ROOT_PATH: process.env.ROOT_PATH,
+        // 取得 package.json 中的 version 資訊插入程式碼中使用
+        npm_package_version: process.env.npm_package_version
       }
     )
   // Stringify all values so we can feed into Webpack DefinePlugin

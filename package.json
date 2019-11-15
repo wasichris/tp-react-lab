@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "_____": "===== 本機開發模式 =====",
     "start": "node scripts/start.js",
-    "build": "node scripts/build.js",
+    "______uat": "===== 建置 UAT 環境 =====",
+    "build-uat": "node scripts/build.js --mode=uat --rootPath=/sub/",
+    "______prod": "===== 建置 PRODUCTION 環境 =====",
+    "build-prod": "node scripts/build.js --mode=prod --rootPath=/sub/tw/",
     "test": "node scripts/test.js"
   },
   "dependencies": {
+    "axios": "^0.19.0",
+    "formik": "^2.0.4",
     "lodash": "^4.17.15",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
@@ -29,6 +35,7 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
+    "command-line-args": "^5.1.1",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",

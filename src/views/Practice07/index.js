@@ -1,14 +1,37 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
-import appModel from '@src/models/app'
-import { connect } from 'react-redux'
-import { bindActionCreators, compose } from 'redux'
-// import PropTypes from 'prop-types'
-import get from 'lodash/get'
-
 import TpLoader from '@src/components/TpLoader//index'
+import { Formik, Form, Field, ErrorMessage } from 'formik'
 
 class Practice07 extends React.Component {
+  validate = values => {
+    const errors = {}
+    // if (!values.email) {
+    //   errors.email = 'Required'
+    // } else if (
+    //   !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
+    // ) {
+    //   errors.email = 'Invalid email address'
+    // }
+    return errors
+  }
+
+  // setSubmitting not working
+  // https://github.com/jaredpalmer/formik/issues/195
+  // https://github.com/jaredpalmer/formik/pull/1987
+  // handleSubmit = (values, { setSubmitting }) => {
+  //   // setSubmitting(true)
+  //   setTimeout(() => {
+  //     alert(JSON.stringify(values, null, 2))
+  //     setSubmitting(false)
+  //   }, 1000)
+  // }
+
+  handleSubmit = async values => {
+    await new Promise(resolve => setTimeout(resolve, 500))
+    alert(JSON.stringify(values, null, 2))
+  }
+
   render () {
     return (
       <>
@@ -20,7 +43,24 @@ class Practice07 extends React.Component {
 
         <TpSection>
 
-          hihi
+          <Formik
+            initialValues={{ email: '', password: '' }}
+            validate={this.validate}
+            onSubmit={this.handleSubmit}
+          >
+
+            {({ isSubmitting }) => (
+              <Form>
+                <Field type='email' name='email' />
+                <ErrorMessage name='email' component='div' />
+                <Field type='password' name='password' />
+                <ErrorMessage name='password' component='div' />
+                {isSubmitting ? 'y' : 'n'}
+                <button type='submit' disabled={isSubmitting}> Submit </button>
+              </Form>
+            )}
+
+          </Formik>
 
         </TpSection>
 
@@ -29,21 +69,4 @@ class Practice07 extends React.Component {
   }
 }
 
-Practice07.propTypes = {
-  // counter: PropTypes.number,
-  // increaseCounter: PropTypes.func,
-  // decreaseCounter: PropTypes.func
-}
-
-const mapStateToProps = state => ({
-  counter: get(state, 'app.counter', 0)
-})
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  increaseCounter: appModel.action.increaseCounter,
-  decreaseCounter: appModel.action.decreaseCounter
-}, dispatch)
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
-)(Practice07)
+export default Practice07

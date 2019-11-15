@@ -1,5 +1,19 @@
 'use strict'
 
+// 定義 build.js 的傳入參數
+const optionDefinitions = [
+  { name: 'mode', type: String },
+  { name: 'rootPath', type: String }
+]
+
+// 接收及格式化傳入參數
+const commandLineArgs = require('command-line-args')
+const options = commandLineArgs(optionDefinitions)
+
+// 將參數存入 process.env 全域變數
+process.env.MODE = options.mode
+process.env.ROOT_PATH = options.rootPath
+
 // Do this as the first thing so that any code reading it knows the right env.
 process.env.BABEL_ENV = 'production'
 process.env.NODE_ENV = 'production'
