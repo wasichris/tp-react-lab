@@ -1,7 +1,7 @@
 import createSagaMiddleware from 'redux-saga'
 import promiseMiddleware from 'redux-promise'
 import { combineReducers, createStore, applyMiddleware } from 'redux'
-import { isEmpty } from 'lodash'
+import isEmpty from 'lodash/isEmpty'
 import models from '@src/models'
 
 /**

@@ -6,7 +6,7 @@ import get from 'lodash/get'
  * Default State
  */
 const defaultState = {
-  requestCount: 0,
+  counter: 0,
   isLogin: false
 }
 
@@ -14,8 +14,8 @@ const defaultState = {
  * Reducer Actions
  */
 const resetAppModel = createAction('Reset app model')
-const increaseRequest = createAction('Increase count of API calling')
-const decreaseRequest = createAction('Decrease count of API calling')
+const increaseCounter = createAction('Increase counter')
+const decreaseCounter = createAction('Decrease counter')
 const setIsLogin = createAction('Setting user is login or not')
 
 /**
@@ -25,11 +25,11 @@ const reducer = createReducer({
   [resetAppModel]: () => {
     return { ...defaultState }
   },
-  [increaseRequest]: (state) => {
-    return { ...state, requestCount: state.requestCount + 1 }
+  [increaseCounter]: (state) => {
+    return { ...state, counter: state.counter + 1 }
   },
-  [decreaseRequest]: (state) => {
-    return { ...state, requestCount: state.requestCount - 1 }
+  [decreaseCounter]: (state) => {
+    return { ...state, counter: state.counter - 1 }
   },
   [setIsLogin]: (state, payload) => {
     return { ...state, isLogin: payload }
@@ -45,8 +45,8 @@ const loginSuccess = createAction('Login system success')
 
 const action = {
   resetAppModel,
-  increaseRequest,
-  decreaseRequest,
+  increaseCounter,
+  decreaseCounter,
   setIsLogin,
   initApp,
   logout,
