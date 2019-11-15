@@ -15,9 +15,18 @@ const Practice03 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/vi
 const Practice04 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice04/index'))
 const Practice05 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice05/index'))
 const Practice06 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice06/index'))
+const Practice07 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice07/index'))
 
-// 動態載入期間顯示的畫面組件
-const LoadingMask = () => <div />
+// // 如果想避免時間短暫造成畫面閃爍，可以給予時間延遲
+// const Practice01 = lazy(() => {
+//   return Promise.all([
+//     import(/* webpackChunkName: "practice" */ '@src/views/Practice01/index'),
+//     new Promise(resolve => setTimeout(resolve, 300))
+//   ]).then(([moduleExports]) => moduleExports)
+// })
+
+// 動態載入期間顯示的畫面組件 (讀取時間相當短暫，可忽略呈現)
+const Loader = () => <div />
 
 class App extends React.Component {
   constructor (props) {
@@ -54,6 +63,7 @@ class App extends React.Component {
                 <div className='app-header__nav-item'> <Link to='/p4'>Practice04</Link> </div>
                 <div className='app-header__nav-item'> <Link to='/p5'>Practice05</Link> </div>
                 <div className='app-header__nav-item'> <Link to='/p6'>Practice06</Link> </div>
+                <div className='app-header__nav-item'> <Link to='/p7'>Practice07</Link> </div>
               </div>
 
             </div>
@@ -64,7 +74,7 @@ class App extends React.Component {
             <div className='app-body__container'>
 
               {/* views */}
-              <Suspense fallback={<LoadingMask />}>
+              <Suspense fallback={<Loader />}>
                 <Switch>
                   <Route path='/p1' component={Practice01} />
                   <Route path='/p2' component={Practice02} />
@@ -72,6 +82,7 @@ class App extends React.Component {
                   <Route path='/p4' component={Practice04} />
                   <Route path='/p5' component={Practice05} />
                   <Route path='/p6' component={Practice06} />
+                  <Route path='/p7' component={Practice07} />
                   <Route path='/' component={Home} />
                 </Switch>
               </Suspense>

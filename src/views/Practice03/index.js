@@ -7,7 +7,7 @@ class Practice03 extends React.Component {
     return (
       <>
         <h1> 於子組件中插入區塊 </h1>
-        <p className='page-desc'>
+        <p className='desc'>
           熟悉插入子組件特定區塊的方式，請於子組件各指定區塊插入對應文字。
         </p>
 

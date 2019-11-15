@@ -8,7 +8,7 @@ const Practice05View01 = lazy(() => import(/* webpackChunkName: "practice05" */ 
 const Practice05View02 = lazy(() => import(/* webpackChunkName: "practice05" */ '@src/views/Practice05/Practice05View02'))
 
 // 動態載入期間顯示的畫面組件
-const LoadingMask = () => <div />
+const Loader = () => <div />
 
 class Practice05 extends React.Component {
   handleGoView02Topic03 = () => {
@@ -20,7 +20,7 @@ class Practice05 extends React.Component {
     return (
       <>
         <h1> 路由設定及轉址 </h1>
-        <p className='page-desc'>
+        <p className='desc'>
           熟悉路由設定方式，請使用 Practice05 資料夾下 <span className='code'>Practice05View01</span>及<span className='code'>Practice05View02</span>組件，以動態載入頁面組件方式設定路由，實作點擊連結切換不同路由以顯示不同畫面。
         </p>
 
@@ -62,7 +62,7 @@ class Practice05 extends React.Component {
           {/* 以路由變化來切換此區塊顯示的畫面 */}
 
           {/* views */}
-          <Suspense fallback={<LoadingMask />}>
+          <Suspense fallback={<Loader />}>
             <Switch>
               <Route path={`${match.path}/v1/:topic`} component={Practice05View01} />
               <Route path={`${match.path}/v2`} component={Practice05View02} />

@@ -86,21 +86,6 @@ p, ul, li {
   }
 }
 
-// =================== page ======================
-
-.page-desc {
-  font-size: 15px;
-}
-
-.page-section {
-  font-size: 16px;
-  background: rgb(207, 207, 207);
-  padding: 15px;
-  margin-top: 20px;
-  border-radius: 6px;
-  color: $text-color-dark;
-}
-
 // =================== input ======================
 
 .tp-radio {
@@ -117,16 +102,70 @@ p, ul, li {
   }
 }
 
-// =================== other ======================
+// =================== components ======================
 
-.hint {
-  padding-top: 5px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: $hint-color;
+.tp-loader {
+  &__container {
+    display: inline-block;
+    position: relative;
+    width: 40px;
+    height: 10px;
+  }
+  &__item {
+    position: absolute;
+    top: 2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: $link-color;
+    animation-timing-function: cubic-bezier(0, 1, 1, 0);
+    &:nth-child(1) {
+      left: 1px;
+      animation: lds-ellipsis1 0.6s infinite;
+    }
+    &:nth-child(2) {
+      left: 1px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    &:nth-child(3) {
+      left: 16px;
+      animation: lds-ellipsis2 0.6s infinite;
+    }
+    &:nth-child(4) {
+      left: 29px;
+      animation: lds-ellipsis3 0.6s infinite;
+    }
+  }
+
+  @keyframes lds-ellipsis1 {
+    0% {
+      transform: scale(0);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  @keyframes lds-ellipsis3 {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(0);
+    }
+  }
+
+  @keyframes lds-ellipsis2 {
+    0% {
+      transform: translate(0, 0);
+    }
+    100% {
+      transform: translate(15px, 0);
+    }
+  }
 }
 
-.bundary {
+.tp-bundary {
   font-size: 16px;
   border: 1px dashed $bundary-color;
   margin: 15px 0;
@@ -143,6 +182,31 @@ p, ul, li {
     top: 5px;
   }
 }
+
+.tp-section {
+  font-size: 16px;
+  background: rgb(207, 207, 207);
+  padding: 15px;
+  margin-top: 20px;
+  border-radius: 6px;
+  color: $text-color-dark;
+}
+
+// =================== other ======================
+
+.desc {
+  font-size: 15px;
+}
+
+
+.hint {
+  padding-top: 5px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: $hint-color;
+}
+
+
 
 .code {
   padding: 0 5px;

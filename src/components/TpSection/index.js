@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 const TpSection = (props) => {
   const { children } = props
   return (
-    <div className='page-section'>
+    <div className='tp-section'>
       {children}
     </div>
 

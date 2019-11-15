@@ -18,7 +18,7 @@ class Practice04 extends React.Component {
     return (
       <>
         <h1> 存取前端資訊 </h1>
-        <p className='page-desc'>
+        <p className='desc'>
           熟悉前端資訊封裝方式，請依照以下要求使用 utils\storage 模組存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
         </p>
 
