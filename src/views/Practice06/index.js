@@ -1,6 +1,6 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
-import appModel from '@src/models/app'
+import demoModel from '@src/models/demo'
 import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux'
 import PropTypes from 'prop-types'
@@ -44,12 +44,12 @@ Practice06.propTypes = {
 }
 
 const mapStateToProps = state => ({
-  counter: get(state, 'app.counter', 0)
+  counter: get(state, 'demo.counter', 0)
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  increaseCounter: appModel.action.increaseCounter,
-  decreaseCounter: appModel.action.decreaseCounter
+  increaseCounter: demoModel.action.increaseCounter,
+  decreaseCounter: demoModel.action.decreaseCounter
 }, dispatch)
 
 export default compose(

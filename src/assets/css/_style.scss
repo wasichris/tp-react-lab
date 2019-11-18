@@ -89,14 +89,12 @@ p, ul, li {
 // =================== input ======================
 
 .tp-radio {
-
   &__label {
     padding-left: 5px;
   }
 }
 
 .tp-checkbox {
-
   &__label {
     padding-left: 5px;
   }
@@ -192,12 +190,27 @@ p, ul, li {
   color: $text-color-dark;
 }
 
+.tp-table {
+  $border: black 1px solid;
+
+  border: $border;
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+
+  &__th, &__tr, &__td {
+    border: $border;
+    padding: 5px;
+  }
+
+  
+}
+
 // =================== other ======================
 
 .desc {
   font-size: 15px;
 }
-
 
 .hint {
   padding-top: 5px;
@@ -205,8 +218,6 @@ p, ul, li {
   line-height: 1.5;
   color: $hint-color;
 }
-
-
 
 .code {
   padding: 0 5px;
