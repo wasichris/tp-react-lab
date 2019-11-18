@@ -17,7 +17,7 @@ class Practice07Call02 extends React.Component {
     const hasContacts = contacts && contacts.length > 0
     return (
       <>
-        <h4> 2. 透過 Action 呼叫 API 取得資訊，並存放於 Redux 中，畫面資料來自 Redux State (共用資料邏輯) </h4>
+        <h4> [練習2] 透過 Action 呼叫 API 取得資訊，並存放於 Redux 中，畫面資料來自 Redux State (可共用資料處理邏輯) </h4>
         <table className='tp-table'>
 
           <thead>
