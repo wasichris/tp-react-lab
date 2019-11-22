@@ -1,6 +1,7 @@
 import { createAction, createReducer } from 'redux-act'
-import { takeEvery, put, take, fork, select } from 'redux-saga/effects'
+import { takeEvery, put, take, fork, select, call } from 'redux-saga/effects'
 import get from 'lodash/get'
+import api from '@src/services/api'
 
 /**
  * Default State
@@ -31,6 +32,7 @@ const reducer = createReducer({
  * Saga Actions
  */
 const initApp = createAction('Init app')
+const login = createAction('Login system')
 const logout = createAction('Logout system')
 const loginSuccess = createAction('Login system success')
 
@@ -38,6 +40,7 @@ const action = {
   resetAppModel,
   setIsLogin,
   initApp,
+  login,
   logout,
   loginSuccess
 }
@@ -52,6 +55,24 @@ function * initAppSaga ({ payload }) {
     // ....
   } catch (error) {
     console.error('initAppSaga error:', error)
+  }
+}
+
+function * loginSaga ({ payload }) {
+  try {
+    // 登入系統
+    const { id, pcode } = payload
+    const { isSuccess, msg } = yield call(api.login, { id, pcode })
+
+    // 登入成功
+    if (isSuccess) {
+      yield put(loginSuccess())
+    }
+
+    // 顯示訊息
+    window.alert(msg)
+  } catch (error) {
+    console.error('loginSaga error:', error)
   }
 }
 
@@ -92,6 +113,7 @@ function * authFlowSaga () {
 const saga = function * () {
   // 使用 takeEvery 綁定 action 觸發 saga 執行
   yield takeEvery(initApp, initAppSaga)
+  yield takeEvery(login, loginSaga)
 
   // 使用 fork 直接執行身分驗證 saga 流程
   yield fork(authFlowSaga)

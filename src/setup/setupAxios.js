@@ -13,9 +13,7 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
   if (error.response) {
     // server responded status code falls out of the range of 2xx
-
     const { message } = error.response.data
-    console.error(message)
 
     switch (error.response.status) {
       case 400:

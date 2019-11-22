@@ -7,6 +7,9 @@ import * as serviceWorker from '@src/utils/serviceWorker'
 import { Provider } from 'react-redux'
 import store from '@src/store.js'
 
+// setup all environment
+import '@src/setup/setupAxios'
+
 ReactDOM.render(
   <Provider store={store}>
     <App />
