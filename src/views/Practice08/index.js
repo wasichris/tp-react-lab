@@ -53,7 +53,7 @@ class Practice08 extends React.Component {
             // ==== 未登入 ====
             : (
               <>
-                <h3>請輸入帳號及密碼進行登入(密碼預設QOO)</h3>
+                <h3>請輸入帳號及密碼進行登入(密碼為111)</h3>
                 <Formik
                   initialValues={{ id: 'ThinkPower', pcode: '' }}
                   validate={this.validate}

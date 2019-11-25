@@ -43,7 +43,7 @@ input {
 // =================== app-header ======================
 
 .app-header {
-  height: $header-height;
+  min-height: $header-height;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -212,7 +212,7 @@ input {
 .tp-form {
   display: flex;
   flex-direction: column;
-  width: 300px;
+  max-width: 300px;
 
   &__row {
     padding: 10px 0;
