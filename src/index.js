@@ -9,6 +9,7 @@ import store from '@src/store.js'
 
 // setup all environment
 import '@src/setup/setupAxios'
+import '@src/setup/setupYup'
 
 ReactDOM.render(
   <Provider store={store}>

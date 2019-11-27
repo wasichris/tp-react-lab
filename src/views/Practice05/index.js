@@ -21,7 +21,7 @@ class Practice05 extends React.Component {
       <>
         <h1> 路由設定及轉址 </h1>
         <p className='desc'>
-          熟悉路由設定方式，請使用 Practice05 資料夾下 <span className='code'>Practice05View01</span>及<span className='code'>Practice05View02</span>組件，以動態載入頁面組件方式設定路由，實作點擊連結切換不同路由以顯示不同畫面。
+          熟悉路由設定方式，請使用 Practice05 資料夾下 <span className='tp-tag'>Practice05View01</span>及<span className='tp-tag'>Practice05View02</span>組件，以動態載入頁面組件方式設定路由，實作點擊連結切換不同路由以顯示不同畫面。
         </p>
 
         <h4>1. 連結轉址帶參數 (參數於url上)</h4>

@@ -23,7 +23,7 @@ class Practice04 extends React.Component {
         </p>
 
         <TpSection>
-          <div>存放<span className='code'>token</span>於 session storage 中</div>
+          <div>存放<span className='tp-tag'>token</span>於 session storage 中</div>
           <input type='text' />
           <button onClick={this.handleTokenSave}>save</button>
 
@@ -31,7 +31,7 @@ class Practice04 extends React.Component {
         </TpSection>
 
         <TpSection>
-          <div>存放<span className='code'>id</span>於 local storage 中</div>
+          <div>存放<span className='tp-tag'>id</span>於 local storage 中</div>
           <input type='text' />
           <button onClick={this.handleIdSave}>save</button>
 
@@ -39,7 +39,7 @@ class Practice04 extends React.Component {
         </TpSection>
 
         <TpSection>
-          <div>存放<span className='code'>name</span>於 cookie 中</div>
+          <div>存放<span className='tp-tag'>name</span>於 cookie 中</div>
           <input type='text' />
           <button onClick={this.handleNameSave}>save</button>
 

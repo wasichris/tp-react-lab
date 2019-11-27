@@ -6,18 +6,13 @@ import { connect } from 'react-redux'
 import { bindActionCreators, compose } from 'redux'
 import PropTypes from 'prop-types'
 import get from 'lodash/get'
+import * as yup from 'yup'
 
 class Practice08 extends React.Component {
-  validate = values => {
-    const errors = {}
-    if (!values.id) {
-      errors.id = 'Required'
-    }
-    if (!values.pcode) {
-      errors.pcode = 'Required'
-    }
-    return errors
-  }
+  formSchema = () => yup.object().shape({
+    id: yup.string().required(),
+    pcode: yup.string().required()
+  });
 
   handleLogin = async values => {
     const { id, pcode } = values
@@ -56,7 +51,7 @@ class Practice08 extends React.Component {
                 <h3>請輸入帳號及密碼進行登入(密碼為111)</h3>
                 <Formik
                   initialValues={{ id: 'ThinkPower', pcode: '' }}
-                  validate={this.validate}
+                  validationSchema={this.formSchema()}
                   onSubmit={this.handleLogin}
                 >
 
