@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 import appModel from '@src/models/app'
 import get from 'lodash/get'
 import PropTypes from 'prop-types'
-import { BrowserRouter as Router, Route, Link, Switch } from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch, NavLink } from 'react-router-dom'
 
 // 動態載入頁面組件，使用 webpack magic comments 定義各自 chunk name 分散需載入的資源
 const Home = lazy(() => import(/* webpackChunkName: "home" */ '@src/views/Home/index'))
@@ -58,16 +58,36 @@ class App extends React.Component {
 
               {/* nav */}
               <div className='app-header__nav'>
-                <div className='app-header__nav-item'> <Link to='/'>Home</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p1'>Practice01</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p2'>Practice02</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p3'>Practice03</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p4'>Practice04</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p5'>Practice05</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p6'>Practice06</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p7'>Practice07</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p8'>Practice08</Link> </div>
-                <div className='app-header__nav-item'> <Link to='/p9'>Practice09</Link> </div>
+                <div className='app-header__nav-item'>
+                  <NavLink exact activeClassName='app-header__nav-item--active' to='/'>Home</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p1'>Practice01</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p2'>Practice02</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p3'>Practice03</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p4'>Practice04</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p5'>Practice05</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p6'>Practice06</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p7'>Practice07</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p8'>Practice08</NavLink>
+                </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p9'>Practice09</NavLink>
+                </div>
               </div>
 
             </div>

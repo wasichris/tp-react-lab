@@ -75,6 +75,11 @@ input {
     & > a {
       text-decoration: none;
     }
+
+    &--active {
+      font-weight: bold;
+      color: $link-acitve-color;
+    }
   }
 }
 
