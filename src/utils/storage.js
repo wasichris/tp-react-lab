@@ -125,7 +125,10 @@ const clear = {
  * @description 儲存 storage 使用的 key
  */
 const key = {
-  conversationId: 'conversationId' // 初始對話後取得的ID
+  conversationId: 'conversationId', // 初始對話後取得的ID
+  token: 'token',
+  id: 'id',
+  name: 'name'
 }
 
 export default {
@@ -138,6 +141,27 @@ export default {
     get value () { return getItem.session(this.key) },
     set value (val) { setItem.session(this.key, val) },
     remove () { removeItem.session(this.key) }
+  },
+
+  token: {
+    key: key.token,
+    get value () { return getItem.session(this.key) },
+    set value (val) { setItem.session(this.key, val) },
+    remove () { removeItem.session(this.key) }
+  },
+
+  id: {
+    key: key.id,
+    get value () { return getItem.local(this.key) },
+    set value (val) { setItem.local(this.key, val) },
+    remove () { removeItem.local(this.key) }
+  },
+
+  name: {
+    key: key.name,
+    get value () { return getItem.cookie(this.key) },
+    set value (val) { setItem.cookie(this.key, val) },
+    remove () { removeItem.cookie(this.key) }
   },
 
   /**

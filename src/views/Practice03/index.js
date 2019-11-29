@@ -3,6 +3,10 @@ import Practice03Child from './Practice03Child'
 import TpSection from '@src/components/TpSection/index'
 
 class Practice03 extends React.Component {
+  top = <p>I'm top</p>
+  middle = <p>I'm middle</p>
+  bottom = <p>I'm bottom</p>
+
   render () {
     return (
       <>
@@ -17,7 +21,9 @@ class Practice03 extends React.Component {
           <div>父層組件</div>
 
           {/* 子組件 */}
-          <Practice03Child />
+          <Practice03Child top={this.top} bottom={this.bottom}>
+            {this.middle}
+          </Practice03Child>
 
         </TpSection>
 

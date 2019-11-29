@@ -9,16 +9,18 @@ class Practice03Child extends React.Component {
         子層組件
 
         <TpBoundary tag='top'>
-          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;I'm top&lt;/p&gt;
+          {this.props.top}
         </TpBoundary>
 
         <TpBoundary tag='middle'>
-          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;I'm middle&lt;/p&gt;
           {this.props.children}
         </TpBoundary>
 
         <TpBoundary tag='bottom'>
-          從父組件對子組件插入&lt;p&gt;任意文字&lt;/p&gt;
+          從父組件對子組件插入&lt;p&gt;I'm dottom&lt;/p&gt;
+          {this.props.bottom}
         </TpBoundary>
 
       </TpBoundary>
@@ -27,7 +29,10 @@ class Practice03Child extends React.Component {
 }
 
 Practice03Child.propTypes = {
-  children: PropTypes.element
+  children: PropTypes.element,
+  top: PropTypes.element,
+  bottom: PropTypes.element
+
 }
 
 export default Practice03Child
