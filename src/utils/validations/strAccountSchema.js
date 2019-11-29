@@ -2,17 +2,10 @@
 import * as yup from 'yup'
 
 export default ({ title }) => yup.string().test({
-  // 檢核名稱 (不重複，套件內部使用)
-  name: 'accountSchema',
-
-  // 如果有相同名稱的檢核時，使用此獨家的檢核邏輯
-  exclusive: true,
-
-  // 插入錯誤訊息的參數定義
-  params: { title },
-
-  // 預設錯誤訊息
-  message: '${title}僅允許輸入小寫英文',
+  name: 'accountSchema', // 檢核名稱 (不重複，套件內部使用)
+  exclusive: true, // 如果有相同名稱的檢核時，使用此獨家的檢核邏輯
+  params: { title }, // 插入錯誤訊息的參數定義
+  message: '${title}僅允許輸入小寫英文', // 預設錯誤訊息
 
   // 檢核邏輯
   // 回傳 true / false 表示是否合法，並使用"預設"錯誤訊息
