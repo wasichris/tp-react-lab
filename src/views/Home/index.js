@@ -1,56 +1,22 @@
-import '@src/assets/css/app.scss'
 import React from 'react'
-import { bindActionCreators, compose } from 'redux'
-import { connect } from 'react-redux'
 import logo from '@src/assets/images/logo.svg'
-import appModel from '@src/models/app'
-import get from 'lodash/get'
-import PropTypes from 'prop-types'
+import { Link } from 'react-router-dom'
 
-class Home extends React.Component {
-  constructor (props) {
-    super(props)
+export default () =>
+  <>
+    <img src={logo} className='app-logo' alt='logo' />
 
-    this.state = {
+    <h2> 練習主題 </h2>
+    <ul>
 
-    }
-  }
-
-  render () {
-    const { requestCount } = this.props
-    return (
-      <>
-        <img src={logo} className='app-logo' alt='logo' />
-        <p> {requestCount} </p>
-        <p>
-            Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          href='https://reactjs.org'
-          target='_blank'
-          rel='noopener noreferrer'
-        >
-          Learn React
-        </a>
-      </>
-    )
-  }
-}
-
-Home.propTypes = {
-  requestCount: PropTypes.number
-}
-
-const mapStateToProps = state => ({
-  isLogin: get(state, 'app.isLogin', false),
-  requestCount: get(state, 'app.requestCount', 0)
-
-})
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  initApp: appModel.action.initApp
-}, dispatch)
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
-)(Home)
+      <li><Link to='/p1'>Practice01 - 輸入控制</Link></li>
+      <li><Link to='/p2'>Practice02 -  父子組件溝通</Link></li>
+      <li><Link to='/p3'>Practice03 - 於子組件中插入區塊</Link></li>
+      <li><Link to='/p4'>Practice04 - 存取前端資訊</Link></li>
+      <li><Link to='/p5'>Practice05 - 路由設定及轉址</Link></li>
+      <li><Link to='/p6'>Practice06 - Redux 全域狀態控制</Link></li>
+      <li><Link to='/p7'>Practice07 - 呼叫 API 取得資訊</Link></li>
+      <li><Link to='/p8'>Practice08 - 使用 saga 完成登入流程</Link></li>
+      <li><Link to='/p9'>Practice09 - 表單驗證</Link></li>
+    </ul>
+  </>

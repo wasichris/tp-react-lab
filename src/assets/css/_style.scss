@@ -37,7 +37,7 @@ input {
 }
 
 .app-logo {
-  height: 40vmin;
+  height: 30vmin;
 }
 
 // =================== app-header ======================
@@ -91,7 +91,7 @@ input {
 
   &__container {
     display: block;
-    padding: 0 20px;
+    padding: 0px 20px 20px 20px;
     width: $app-width;
   }
 }

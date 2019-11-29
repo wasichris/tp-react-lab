@@ -99,10 +99,10 @@ class Practice09 extends React.Component {
           <li>異動資料內容：按下"設定年齡值為18"按鈕時，透過 setFieldValue 方法設定表單中 age 值為 18</li>
           <li>[帳號]：必填、小寫英文、不能為 admin 字串</li>
           <li>[姓名]：必填</li>
-          <li>[身分證號]：必填、身分證邏輯 (請於 utils/validations/ 建立 strTwIdSchema.js 檢核邏輯，並於此套用)</li>
-          <li>[年齡]：必填、選擇性檢核需大於18歲邏輯 (請依據 state.isCheckAgeRange 狀態決定是否進行檢核)</li>
+          <li>[身分證號]：必填、身分證邏輯 <br />(請於 utils/validations/ 建立 strTwIdSchema.js 檢核邏輯，並於此套用)</li>
+          <li>[年齡]：必填、選擇性檢核需大於18歲邏輯 <br />(請依據 state.isCheckAgeRange 狀態決定是否進行檢核)</li>
           <li>[密碼]：必填</li>
-          <li>[確認密碼]：密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同。請使用 yup.string().when() 實作。</li>
+          <li>[確認密碼]：密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同。<br />(請使用 yup.string().when() 實作)</li>
         </ol>
         <TpSection>
           <h3>會員註冊</h3>
