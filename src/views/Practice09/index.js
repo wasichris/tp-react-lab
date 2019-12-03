@@ -91,7 +91,7 @@ class Practice09 extends React.Component {
     return (
       <>
         <h1> 表單驗證 </h1>
-        <p className='desc'>
+        <p className='tp-desc'>
           熟悉 <a target='blank' href='https://jaredpalmer.com/formik/'>FORMIK</a>  操作方式，使用 <a target='blank' href='https://github.com/jquense/yup'>Yup</a> 對目前的表單進行驗證，如驗證通過請將數值 alert 顯示。。
         </p>
         <ol>

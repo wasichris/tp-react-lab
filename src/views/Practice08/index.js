@@ -28,7 +28,7 @@ class Practice08 extends React.Component {
     return (
       <>
         <h1> 使用 saga 完成登入流程 </h1>
-        <p className='desc'>
+        <p className='tp-desc'>
           熟悉 saga 操作方式，請在點擊登入時透過 /services/api.js 中 login 方法呼叫外部 API 來進行登入。
         </p>
         <ol>

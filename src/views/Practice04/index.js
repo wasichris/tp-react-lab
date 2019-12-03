@@ -34,7 +34,7 @@ class Practice04 extends React.Component {
     return (
       <>
         <h1> 存取前端資訊 </h1>
-        <p className='desc'>
+        <p className='tp-desc'>
           熟悉前端資訊封裝方式，請依照以下要求使用 utils\storage 模組存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
         </p>
 
@@ -43,7 +43,7 @@ class Practice04 extends React.Component {
           <input type='text' onChange={e => this.setState({ ...this.state, token: e.target.value })} />
           <button onClick={this.handleTokenSave}>save</button>
 
-          <div className='hint'>您存放的 token 資料: {storage.token.value} </div>
+          <div className='tp-hint'>您存放的 token 資料: {storage.token.value} </div>
         </TpSection>
 
         <TpSection>
@@ -51,7 +51,7 @@ class Practice04 extends React.Component {
           <input type='text' onChange={e => this.setState({ ...this.state, id: e.target.value })} />
           <button onClick={this.handleIdSave}>save</button>
 
-          <div className='hint'>您存放的 id 資料: {storage.id.value} </div>
+          <div className='tp-hint'>您存放的 id 資料: {storage.id.value} </div>
         </TpSection>
 
         <TpSection>
@@ -59,7 +59,7 @@ class Practice04 extends React.Component {
           <input type='text' onChange={e => this.setState({ ...this.state, name: e.target.value })} />
           <button onClick={this.handleNameSave}>save</button>
 
-          <div className='hint'>您存放的 name 資料: {storage.name.value} </div>
+          <div className='tp-hint'>您存放的 name 資料: {storage.name.value} </div>
         </TpSection>
 
       </>

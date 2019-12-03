@@ -32,7 +32,7 @@ class Practice02Child extends React.Component {
       <TpBoundary tag='child component'>
         <div>變動資料可通知父層組件來同步資料</div>
         <div><input type='text' value={internalValue} onChange={this.handleInternalValueChange} /></div>
-        <div className='hint'>
+        <div className='tp-hint'>
           外部傳入的數值(prop): {value} <br />
           內部使用的數值(state): {internalValue}
         </div>

@@ -45,14 +45,14 @@ class Practice01 extends React.Component {
     return (
       <>
         <h1> 輸入控制 </h1>
-        <p className='desc'>
+        <p className='tp-desc'>
           熟悉輸入元素的控制方式，請將輸入資訊存放於 state 中，並修改時即時顯示於輸入框下方。
         </p>
 
         {/* section 1 - input */}
         <TpSection>
           <div><input type='text' value={inputValue1} onChange={this.handleChangeInput1} /> </div>
-          <div className='hint'>您輸入的資料: {inputValue1} </div>
+          <div className='tp-hint'>您輸入的資料: {inputValue1} </div>
         </TpSection>
 
         {/* section 2 - radio */}
@@ -72,7 +72,7 @@ class Practice01 extends React.Component {
             <label htmlFor='sa' className='tp-radio__label'>system analyst</label>
           </div>
 
-          <div className='hint'>您選擇的資料: {inputValue2} </div>
+          <div className='tp-hint'>您選擇的資料: {inputValue2} </div>
         </TpSection>
 
         {/* section 3 - checkbox */}
@@ -92,7 +92,7 @@ class Practice01 extends React.Component {
             <label htmlFor='boat' className='tp-checkbox__label'>I have a boat</label>
           </div>
 
-          <div className='hint'>您選擇的資料: {inputValue3.toString()} </div>
+          <div className='tp-hint'>您選擇的資料: {inputValue3.toString()} </div>
         </TpSection>
 
         {/* section 4 - option */}
@@ -105,7 +105,7 @@ class Practice01 extends React.Component {
             <option value='audi'>Audi</option>
           </select>
 
-          <div className='hint'>您選擇的資料: {inputValue4} </div>
+          <div className='tp-hint'>您選擇的資料: {inputValue4} </div>
         </TpSection>
 
       </>
