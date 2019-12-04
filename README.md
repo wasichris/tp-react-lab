@@ -46,7 +46,8 @@ npm run start
 ```
 **啟動成功後請不要關閉命令提示字元/終端機視窗，網站才能使用**  
 執行成功後開啟 http://localhost:3310/ ，畫面如下  
-![網站首頁](src/assets/images/readme/home.png)  
+<!-- ![網站首頁](src/assets/images/readme/home.png)   -->
+<img src="src/assets/images/readme/home.png" width="700">
 
 ***
 ## 專案結構 ##
@@ -65,41 +66,49 @@ npm run start
 
 ***
 ## 練習項目01 - 輸入控制 ##
-![輸入控制](src/assets/images/readme/practice01.png)  
+<!-- ![輸入控制](src/assets/images/readme/practice01.png)   -->
+<img src="src/assets/images/readme/practice01.png" width="700">
 
 ***
 ## 練習項目02 - 父子組件溝通 ##
-![父子組件溝通](src/assets/images/readme/practice02.png)  
-
+<!-- ![父子組件溝通](src/assets/images/readme/practice02.png)   -->
+<img src="src/assets/images/readme/practice02.png" width="700">
 
 ***
 ## 練習項目03 - 於子組件中插入區塊 ##
-![於子組件中插入區塊](src/assets/images/readme/practice03.png)  
+<!-- ![於子組件中插入區塊](src/assets/images/readme/practice03.png)   -->
+<img src="src/assets/images/readme/practice03.png" width="700">
 
 ***
 ## 練習項目04 - 存取前端資訊 ##
-![存取前端資訊](src/assets/images/readme/practice04.png)  
+<!-- ![存取前端資訊](src/assets/images/readme/practice04.png)   -->
+<img src="src/assets/images/readme/practice04.png" width="700">
 
 ***
 ## 練習項目05 - 路由設定及轉址 ##
-![路由設定及轉址](src/assets/images/readme/practice05.png)  
+<!-- ![路由設定及轉址](src/assets/images/readme/practice05.png)   -->
+<img src="src/assets/images/readme/practice05.png" width="700">
 
 ***
 ## 練習項目06 - Redux 全域狀態控制 ##
-![Redux 全域狀態控制](src/assets/images/readme/practice06.png)  
+<!-- ![Redux 全域狀態控制](src/assets/images/readme/practice06.png)   -->
+<img src="src/assets/images/readme/practice06.png" width="700">
 
 ***
 ## 練習項目07 - 呼叫 API 取得資訊 ##
-![呼叫 API 取得資訊](src/assets/images/readme/practice07.png)  
+<!-- ![呼叫 API 取得資訊](src/assets/images/readme/practice07.png)   -->
+<img src="src/assets/images/readme/practice07.png" width="700">
 
 ***
-## 練習項目08 - 呼叫 API 取得資訊 ##
-![呼叫 API 取得資訊](src/assets/images/readme/practice08.png)  
+## 練習項目08 - 使用 saga 完成登入流程 ##
+<!-- ![使用 saga 完成登入流程](src/assets/images/readme/practice08.png)   -->
+<img src="src/assets/images/readme/practice08.png" width="700">
+
 
 ***
 ## 練習項目09 - 表單驗證 ##
-![表單驗證](src/assets/images/readme/practice09.png)  
-
+<!-- ![表單驗證](src/assets/images/readme/practice09.png|width=100px)   -->
+<img src="src/assets/images/readme/practice09.png" width="700">
 
 ***
 ## 參考資料 ##
@@ -112,3 +121,9 @@ npm run start
 * ECMAScript 6 入門 - http://es6.ruanyifeng.com
 * Sass - https://sass-lang.com
 * axios - https://github.com/axios/axios  
+* react - https://reactjs.org/
+* react router - https://reacttraining.com/react-router/web/guides/quick-start
+* redux - https://chentsulin.github.io/redux/
+* redux saga - https://redux-saga.js.org/
+* formik - https://jaredpalmer.com/formik/docs/overview
+* yup - https://github.com/jquense/yup 
