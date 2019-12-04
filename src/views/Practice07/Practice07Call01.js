@@ -1,22 +1,25 @@
 import React from 'react'
 import api from '@src/services/api'
+import TpLoader from '@src/components/TpLoader/'
 
 class Practice07Call01 extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
+      isLoading: false,
       contacts: []
     }
   }
 
   async componentDidMount () {
     // 1. 單獨呼叫 api => api (呼叫中await擋得住)
+    this.setState({ ...this.state, isLoading: true })
     const resp = await api.getContacts({ contactId: 'contact01' })
-    this.setState({ ...this.state, contacts: resp.contacts })
+    this.setState({ ...this.state, contacts: resp.contacts, isLoading: false })
   }
 
   render () {
-    const { contacts } = this.state
+    const { isLoading, contacts } = this.state
     const hasContacts = contacts && contacts.length > 0
     return (
       <>
@@ -32,7 +35,10 @@ class Practice07Call01 extends React.Component {
           </thead>
 
           <tbody>
-            {hasContacts
+
+            {isLoading && <tr><td colSpan='3'><TpLoader /></td></tr>}
+
+            {!isLoading && (hasContacts
               ? contacts.map(c => (
                 <tr key={c.name} className='tp-table__tr'>
                   <td className='tp-table__td'>{c.name}</td>
@@ -40,7 +46,8 @@ class Practice07Call01 extends React.Component {
                   <td className='tp-table__td'>{c.isMarried ? 'Yes' : 'No'}</td>
                 </tr>
               ))
-              : <tr><td colSpan='3'>empty</td></tr>}
+              : <tr><td colSpan='3'>empty</td></tr>)}
+
           </tbody>
 
         </table>

@@ -113,6 +113,7 @@ input {
 // =================== components ======================
 
 .tp-loader {
+  padding: 20px 0;
   &__container {
     display: inline-block;
     position: relative;
@@ -125,7 +126,7 @@ input {
     width: 8px;
     height: 8px;
     border-radius: 50%;
-    background: $link-color;
+    background: $loader-bg-color;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
     &:nth-child(1) {
       left: 1px;

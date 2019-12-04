@@ -18,12 +18,9 @@ const defaultState = {
 const increaseCounter = createAction('Increase counter')
 const decreaseCounter = createAction('Decrease counter')
 const loadContacts = createAction('Async load and set contacts', async () => {
-  try {
-    const resp = await api.getContacts({ contactId: 'contact02' })
-    return resp
-  } catch (error) {
-    return null
-  }
+  const resp = await api.getContacts({ contactId: 'contact02' })
+  resp.contacts = resp.contacts.map(c => ({ ...c, isMarried: c.isMarried ? 'Yes' : 'No' }))
+  return resp
 })
 
 // const setContacts = createAction('Set contacts')
@@ -39,7 +36,7 @@ const reducer = createReducer({
     return { ...state, counter: state.counter - 1 }
   },
   [loadContacts]: (state, payload) => {
-    if (payload) {
+    if (payload && payload.contacts) {
       return { ...state, contacts: [...payload.contacts] }
     }
     return state

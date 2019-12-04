@@ -1,7 +1,10 @@
 import { post } from '@src/utils/apiHelper'
 
 export default {
+
   /* 取得聯絡人清單 */
+  // === request  ===
+  // { contactId }
   // === response ===
   // {
   //   id: contactId,
@@ -13,10 +16,13 @@ export default {
   getContacts: ({ contactId }) => {
     return post('/survey/getContacts', { contactId })
   },
+
   /* 登入系統 */
+  // === request  ===
+  // { id, pcode }
   // === response ===
   // {
-  //   isSuccess: false,
+  //   isSuccess: true,
   //   msg: 'hi chris, welcome to the practice page'
   // }
   login: ({ id, pcode }) => {

@@ -19,9 +19,7 @@ class Practice02Child extends React.Component {
   }
 
   handleInternalValueChange = e => {
-    const internalValue = e.target.value
-    this.props.onValueChange(internalValue) // 通知父組件數值異動
-    this.setState({ ...this.state, internalValue })
+    this.props.onValueChange(e.target.value) // 通知父組件數值異動
   }
 
   render () {
