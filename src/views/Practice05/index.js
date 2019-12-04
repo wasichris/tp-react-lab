@@ -28,11 +28,11 @@ class Practice05 extends React.Component {
         <ul>
           <li>
             <Link to={`${match.url}/v1/TOPIC01`}> VIEW01-1 </Link>
-            : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 TOPIC01 作為 topic 參數顯示
+            : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 'TOPIC01' 作為 topic 參數顯示
           </li>
           <li>
             <Link to={`${match.url}/v1/TOPIC02`}> VIEW01-2 </Link>
-            : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 TOPIC02 作為 topic 參數顯示
+            : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 'TOPIC02' 作為 topic 參數顯示
           </li>
 
         </ul>
@@ -41,11 +41,11 @@ class Practice05 extends React.Component {
         <ul>
           <li>
             <Link to={{ pathname: `${match.url}/v2`, state: { topic: 'TOPIC01' } }}> VIEW02-1 </Link>
-            : 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 TOPIC01 作為 topic 參數顯示
+            : 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 'TOPIC01' 作為 topic 參數顯示
           </li>
           <li>
             <Link to={{ pathname: `${match.url}/v2`, state: { topic: 'TOPIC02' } }}> VIEW02-2 </Link>
-            : 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 TOPIC02 作為 topic 參數顯示
+            : 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 'TOPIC02' 作為 topic 參數顯示
           </li>
         </ul>
 
@@ -53,7 +53,7 @@ class Practice05 extends React.Component {
         <ul>
           <li>
             <button onClick={this.handleGoView02Topic03}>GO</button>
-            ： 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 TOPIC01 作為 topic 參數顯示
+            ： 以 /p5/v2 顯示 Practice05View02 組件，並以 state 方式傳入 'TOPIC03' 作為 topic 參數顯示
 
           </li>
 

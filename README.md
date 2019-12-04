@@ -22,12 +22,12 @@
 ***
 ## 專案安裝 ##
 * clone 此專案至本地端。
+* 移除專案內的 .git 資料夾，並且在 bitbucket 新增一個私有的 repository，將程式碼簽入。  
 * 在命令提示字元/終端機將目錄移至專案資料夾。
 * 執行下列指令安裝 npm package 。  
 ```
 npm install
 ```
-* 移除專案內的 .git 資料夾，並且在 bitbucket 新增一個私有的 repository，將程式碼簽入。  
 
 ***
 ## 啟動 Mock Api 服務 ##
@@ -61,6 +61,45 @@ npm run start
 * **src/views/** – 功能頁面  
 * **src/App.js** – 主組件  
 * **src/index.js** – 程式進入點  
+
+
+***
+## 練習項目01 - 輸入控制 ##
+![輸入控制](src/assets/images/readme/practice01.png)  
+
+***
+## 練習項目02 - 父子組件溝通 ##
+![父子組件溝通](src/assets/images/readme/practice02.png)  
+
+
+***
+## 練習項目03 - 於子組件中插入區塊 ##
+![於子組件中插入區塊](src/assets/images/readme/practice03.png)  
+
+***
+## 練習項目04 - 存取前端資訊 ##
+![存取前端資訊](src/assets/images/readme/practice04.png)  
+
+***
+## 練習項目05 - 路由設定及轉址 ##
+![路由設定及轉址](src/assets/images/readme/practice05.png)  
+
+***
+## 練習項目06 - Redux 全域狀態控制 ##
+![Redux 全域狀態控制](src/assets/images/readme/practice06.png)  
+
+***
+## 練習項目07 - 呼叫 API 取得資訊 ##
+![呼叫 API 取得資訊](src/assets/images/readme/practice07.png)  
+
+***
+## 練習項目08 - 呼叫 API 取得資訊 ##
+![呼叫 API 取得資訊](src/assets/images/readme/practice08.png)  
+
+***
+## 練習項目09 - 表單驗證 ##
+![表單驗證](src/assets/images/readme/practice09.png)  
+
 
 ***
 ## 參考資料 ##

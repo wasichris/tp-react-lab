@@ -34,7 +34,7 @@ class Practice08 extends React.Component {
         <ol>
           <li>登入時呼叫 /models/app.js (appModel) 中 login action</li>
           <li>login action 觸發 loginSaga (takeEvery)</li>
-          <li>call api 將回應訊息 alert 出</li>
+          <li>於 loginSaga 中 call api 將回應訊息 alert 出</li>
           <li>成功登入時，切換 appModel isLogin 狀態為 true</li>
           <li>畫面上依照 appModel isLogin 狀態調整畫面，將登入介面隱藏，只顯示登出鍵</li>
           <li>點選登出鍵呼叫 appModel logout action 切換狀態顯示登入介面</li>

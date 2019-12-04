@@ -5,7 +5,7 @@ class Practice01 extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      inputValue1: 'hi',
+      inputValue1: 'text',
       inputValue2: 'sd',
       inputValue3: ['car', 'boat'],
       inputValue4: 'vw'
@@ -46,7 +46,7 @@ class Practice01 extends React.Component {
       <>
         <h1> 輸入控制 </h1>
         <p className='tp-desc'>
-          熟悉輸入元素的控制方式，請將輸入資訊存放於 state 中，並在修改時同步顯示於輸入框下方。
+          熟悉輸入元素的控制方式，請將輸入資訊存放於 state 中 (inputValue1~inputValue4)，並在修改時同步顯示於輸入框下方。
         </p>
 
         {/* section 1 - input */}
