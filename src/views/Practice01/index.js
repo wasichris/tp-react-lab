@@ -8,18 +8,16 @@ class Practice01 extends React.Component {
       inputValue1: 'text',
       inputValue2: 'sd',
       inputValue3: ['car', 'boat'],
-      inputValue4: 'vw'
+      inputValue4: 'ford'
     }
   }
 
   handleChangeInput1 = (e) => {
-    const value = e.target.value
-    this.setState({ ...this.state, inputValue1: value })
+    this.setState({ ...this.state, inputValue1: e.target.value })
   }
 
   handleChangeInput2 = (e) => {
-    const value = e.target.value
-    this.setState({ ...this.state, inputValue2: value })
+    this.setState({ ...this.state, inputValue2: e.target.value })
   }
 
   handleChangeInput3 = (e) => {
@@ -35,8 +33,7 @@ class Practice01 extends React.Component {
   }
 
   handleChangeInput4 = (e) => {
-    const value = e.target.value
-    this.setState({ ...this.state, inputValue4: value })
+    this.setState({ ...this.state, inputValue4: e.target.value })
   }
 
   render () {
@@ -101,7 +98,7 @@ class Practice01 extends React.Component {
             <option value=''>Please Select</option>
             <option value='volvo'>Volvo</option>
             <option value='saab'>Saab</option>
-            <option value='vw'>VW</option>
+            <option value='ford'>Ford</option>
             <option value='audi'>Audi</option>
           </select>
 

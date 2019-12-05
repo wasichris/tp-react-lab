@@ -15,19 +15,19 @@ class Practice04 extends React.Component {
   handleTokenSave = () => {
     // save token to session storage
     storage.token.value = this.state.token
-    this.setState({ ...this.state, token: this.state.token })
+    this.forceUpdate()
   }
 
   handleIdSave = () => {
     // save id to local storage
     storage.id.value = this.state.id
-    this.setState({ ...this.state, id: this.state.id })
+    this.forceUpdate()
   }
 
   handleNameSave = () => {
     // save name to cookie
     storage.name.value = this.state.name
-    this.setState({ ...this.state, name: this.state.name })
+    this.forceUpdate()
   }
 
   render () {
@@ -35,11 +35,11 @@ class Practice04 extends React.Component {
       <>
         <h1> 存取前端資訊 </h1>
         <p className='tp-desc'>
-          熟悉前端資訊封裝方式，請依照以下要求使用 utils\storage 模組存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
+          熟悉前端資訊封裝方式，請依照以下要求使用 utils\storage.js 存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
         </p>
 
         <TpSection>
-          <div>存放<span className='tp-tag'>token</span>於 session storage 中</div>
+          <div>存放 token 於 session storage 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, token: e.target.value })} />
           <button onClick={this.handleTokenSave}>save</button>
 
@@ -47,7 +47,7 @@ class Practice04 extends React.Component {
         </TpSection>
 
         <TpSection>
-          <div>存放<span className='tp-tag'>id</span>於 local storage 中</div>
+          <div>存放 id 於 local storage 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, id: e.target.value })} />
           <button onClick={this.handleIdSave}>save</button>
 
@@ -55,7 +55,7 @@ class Practice04 extends React.Component {
         </TpSection>
 
         <TpSection>
-          <div>存放<span className='tp-tag'>name</span>於 cookie 中</div>
+          <div>存放 name 於 cookie 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, name: e.target.value })} />
           <button onClick={this.handleNameSave}>save</button>
 

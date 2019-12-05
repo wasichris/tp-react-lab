@@ -15,7 +15,7 @@ class Practice02Child extends React.Component {
       return { ...state, internalValue: props.value }
     }
 
-    return null
+    return null // 回傳 null 表示 state 無異動
   }
 
   handleInternalValueChange = e => {

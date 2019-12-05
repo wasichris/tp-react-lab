@@ -6,6 +6,7 @@ import PropTypes from 'prop-types'
 // 動態載入頁面組件，使用 webpack magic comments 定義各自 chunk name 分散需載入的資源
 const Practice05View01 = lazy(() => import(/* webpackChunkName: "practice05" */ '@src/views/Practice05/Practice05View01'))
 const Practice05View02 = lazy(() => import(/* webpackChunkName: "practice05" */ '@src/views/Practice05/Practice05View02'))
+const Practice05View03 = lazy(() => import(/* webpackChunkName: "practice05" */ '@src/views/Practice05/Practice05View03'))
 
 // 動態載入期間顯示的畫面組件
 const Loader = () => <div />
@@ -21,7 +22,8 @@ class Practice05 extends React.Component {
       <>
         <h1> 路由設定及轉址 </h1>
         <p className='tp-desc'>
-          熟悉路由設定方式，請使用 Practice05 資料夾下 <span className='tp-tag'>Practice05View01</span>及<span className='tp-tag'>Practice05View02</span>組件，以動態載入頁面組件方式設定路由，實作點擊連結切換不同路由以顯示不同畫面。
+           依照以下要求設定 <a target='blank' href='https://reacttraining.com/react-router/web/api/Route'>Route</a> 路由，使用 lazy 方式動態載入 Practice05 資料夾下 Practice05View01、Practice05View02 及 Practice05View03 組件，
+           透過點擊 <a target='blank' href='https://reacttraining.com/react-router/web/api/Link'>Link</a> 連結組件切換不同路由以顯示不同畫面於 router view 區塊中。
         </p>
 
         <h4>1. 連結轉址帶參數 (參數於url上)</h4>
@@ -34,7 +36,10 @@ class Practice05 extends React.Component {
             <Link to={`${match.url}/v1/TOPIC02`}> VIEW01-2 </Link>
             : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 'TOPIC02' 作為 topic 參數顯示
           </li>
-
+          <li>
+            <Link to={`${match.url}/v1/TOPIC03`}> VIEW03 </Link>
+            : 以 /p5/v1/TOPIC03 顯示 Practice05View03 組件
+          </li>
         </ul>
 
         <h4>2. 連結轉址帶參數 (參數不顯示於url上)</h4>
@@ -64,6 +69,7 @@ class Practice05 extends React.Component {
           {/* views */}
           <Suspense fallback={<Loader />}>
             <Switch>
+              <Route path={`${match.path}/v1/TOPIC03`} component={Practice05View03} />
               <Route path={`${match.path}/v1/:topic`} component={Practice05View01} />
               <Route path={`${match.path}/v2`} component={Practice05View02} />
               <Route path={`${match.path}/`}>  <h3> DEFAULT </h3>  </Route>
