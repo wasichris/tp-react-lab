@@ -14,7 +14,7 @@ export default {
   //   ]
   // }
   getContacts: ({ contactId }) => {
-    return post('/survey/getContacts', { contactId })
+    return post('/lab/getContacts', { contactId })
   },
 
   /* 登入系統 */
@@ -26,6 +26,6 @@ export default {
   //   msg: 'hi chris, welcome to the practice page'
   // }
   login: ({ id, pcode }) => {
-    return post('/survey/login', { id, pcode })
+    return post('/lab/login', { id, pcode })
   }
 }

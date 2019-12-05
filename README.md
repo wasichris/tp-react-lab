@@ -31,13 +31,16 @@ npm install
 
 ***
 ## 啟動 Mock Api 服務 ##
+請使用 tpi-react-lab-mock-api 專案作為 mock api 提供者。
 ```
-npm run start-mock
+npm start
 ```
 **啟動成功後請不要關閉命令提示字元/終端機視窗，網站服務才能使用**  
 練習項目時會使用到，於開發期間啟動此服務  
-執行成功後開啟 http://localhost:9999/ ，畫面如下  
-![mock api首頁](readmeImg/mock_api_live.png )  
+執行成功後開啟 http://localhost:8888/ ，畫面如下  
+<!-- ![mock api首頁](src/assets/images/readme/mock.png )   -->
+
+<img src="src/assets/images/readme/mock.png" width="300">
 
 ***
 ## 專案執行(開發) ##
