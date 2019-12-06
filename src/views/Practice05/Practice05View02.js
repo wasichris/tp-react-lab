@@ -1,7 +1,7 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-// import PropTypes from 'prop-types'
 
+/* example01: functional component */
 const Practice05View02 = () => {
   const { state } = useLocation()
   const topic = state ? state.topic : ''
@@ -13,6 +13,8 @@ const Practice05View02 = () => {
   )
 }
 
+/* example02: class component */
+// import PropTypes from 'prop-types'
 // class Practice05View02 extends React.Component {
 //   render () {
 //     const state = this.props.location.state

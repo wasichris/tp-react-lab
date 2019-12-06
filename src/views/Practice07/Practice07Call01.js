@@ -12,7 +12,6 @@ class Practice07Call01 extends React.Component {
   }
 
   async componentDidMount () {
-    // 1. 單獨呼叫 api => api (呼叫中await擋得住)
     this.setState({ ...this.state, isLoading: true })
     const resp = await api.getContacts({ contactId: 'contact01' })
     this.setState({ ...this.state, contacts: resp.contacts, isLoading: false })
@@ -23,7 +22,7 @@ class Practice07Call01 extends React.Component {
     const hasContacts = contacts && contacts.length > 0
     return (
       <>
-        <h4> [練習1] 直接於組件中呼叫 API 取得資訊 </h4>
+        <h4> [練習1] 直接於組件 componentDidMount 中呼叫 API 取得資訊 </h4>
         <table className='tp-table'>
 
           <thead>

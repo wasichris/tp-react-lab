@@ -15,10 +15,12 @@ class Practice07Call02 extends React.Component {
   }
 
   async componentDidMount () {
-    // 2. 共用呼叫 api + 資料整理 + 互動寫入 redux => async action  (呼叫中await擋得住)
-    this.setState({ ...this.state, isLoading: true })
-    await this.props.loadContacts()
-    this.setState({ ...this.state, isLoading: false })
+    const { loadAndSetContacts, contacts } = this.props
+    if (contacts && contacts.length === 0) {
+      this.setState({ ...this.state, isLoading: true })
+      await loadAndSetContacts()
+      this.setState({ ...this.state, isLoading: false })
+    }
   }
 
   render () {
@@ -27,7 +29,7 @@ class Practice07Call02 extends React.Component {
     const hasContacts = contacts && contacts.length > 0
     return (
       <>
-        <h4> [練習2] 透過 Async Action 呼叫 API 取得資訊，並存放於 Redux 中，畫面資料來自 Redux State (可共用資料處理邏輯) </h4>
+        <h4> [練習2] 於 demoModel (model/demo.js) 建立 loadAndSetContacts Async Action 呼叫 API 取得資訊後存放於 Store 中，組件呼叫此 action 取得資料並將資料呈現在畫面中 (可共用資料處理邏輯) </h4>
         <table className='tp-table'>
 
           <thead>
@@ -63,7 +65,7 @@ class Practice07Call02 extends React.Component {
 
 Practice07Call02.propTypes = {
   contacts: PropTypes.array,
-  loadContacts: PropTypes.func
+  loadAndSetContacts: PropTypes.func
 }
 
 const mapStateToProps = state => ({
@@ -71,7 +73,7 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  loadContacts: demoModel.action.loadContacts
+  loadAndSetContacts: demoModel.action.loadAndSetContacts
 }, dispatch)
 
 export default compose(

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
-// import PropTypes from 'prop-types'
 
 /* example01: functional component */
 const Practice05View01 = () => {
@@ -14,6 +13,7 @@ const Practice05View01 = () => {
 }
 
 /* example02: class component */
+// import PropTypes from 'prop-types'
 // class Practice05View01 extends React.Component {
 //   render () {
 //     const { topic } = this.props.match.params

@@ -37,8 +37,8 @@ class Practice05 extends React.Component {
             : 以 /p5/v1/:topic 顯示 Practice05View01 組件，並傳入 'TOPIC02' 作為 topic 參數顯示
           </li>
           <li>
-            <Link to={`${match.url}/v1/TOPIC03`}> VIEW03 </Link>
-            : 以 /p5/v1/TOPIC03 顯示 Practice05View03 組件
+            <Link to={`${match.url}/v1/view03`}> VIEW03-1 </Link>
+            : 以 /p5/v1/view03 顯示 Practice05View03 組件
           </li>
         </ul>
 
@@ -69,7 +69,7 @@ class Practice05 extends React.Component {
           {/* views */}
           <Suspense fallback={<Loader />}>
             <Switch>
-              <Route path={`${match.path}/v1/TOPIC03`} component={Practice05View03} />
+              <Route path={`${match.path}/v1/view03`} component={Practice05View03} />
               <Route path={`${match.path}/v1/:topic`} component={Practice05View01} />
               <Route path={`${match.path}/v2`} component={Practice05View02} />
               <Route path={`${match.path}/`}>  <h3> DEFAULT </h3>  </Route>

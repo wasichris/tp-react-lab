@@ -1,9 +1,6 @@
 import { createAction, createReducer } from 'redux-act'
 import api from '@src/services/api'
 
-// import { takeLatest, put, call } from 'redux-saga/effects'
-// import get from 'lodash/get'
-
 /**
  * Default State
  */
@@ -17,13 +14,11 @@ const defaultState = {
  */
 const increaseCounter = createAction('Increase counter')
 const decreaseCounter = createAction('Decrease counter')
-const loadContacts = createAction('Async load and set contacts', async () => {
+const loadAndSetContacts = createAction('Async load and set contacts', async () => {
   const resp = await api.getContacts({ contactId: 'contact02' })
   resp.contacts = resp.contacts.map(c => ({ ...c, isMarried: c.isMarried ? 'Yes' : 'No' }))
   return resp
 })
-
-// const setContacts = createAction('Set contacts')
 
 /**
  * Reducers
@@ -35,51 +30,25 @@ const reducer = createReducer({
   [decreaseCounter]: (state) => {
     return { ...state, counter: state.counter - 1 }
   },
-  [loadContacts]: (state, payload) => {
+  [loadAndSetContacts]: (state, payload) => {
     if (payload && payload.contacts) {
       return { ...state, contacts: [...payload.contacts] }
     }
     return state
   }
-  // [setContacts]: (state, payload) => {
-  //   return { ...state, contacts: [...payload] }
-  // }
 }, defaultState)
-
-/**
- * Saga Actions
- */
-// const loadContactsComplex = createAction('load and set contacts by saga')
 
 const action = {
   increaseCounter,
   decreaseCounter,
-  // loadContacts,
-  loadContacts
-  // loadContactsComplex,
-  // setContacts
+  loadAndSetContacts
 }
-
-/**
- * Saga Generator functions
- */
-// function * loadContactsComplexSaga ({ payload }) {
-//   try {
-//     yield put(setContacts([]))
-//     const { contacts } = yield call(api.getContacts, { contactId: 'wahaha' })
-
-//     yield put(setContacts(contacts))
-//   } catch (error) {
-//     console.error('loadContactsComplexSaga error:', error)
-//   }
-// }
 
 /**
  * Sagas
  */
 const saga = function * () {
-  // 使用 takeLatest 綁定 action 觸發 saga 執行
-  // yield takeLatest(loadContactsComplex, loadContactsComplexSaga)
+
 }
 
 export default {

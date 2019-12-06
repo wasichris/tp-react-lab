@@ -21,7 +21,7 @@ class Practice07 extends React.Component {
         </TpSection>
 
         <TpSection>
-          {/* 透過 Action 呼叫 API 取得資訊 */}
+          {/* 透過 Async Action 呼叫 API 取得資訊 */}
           <Practice07Call02 />
         </TpSection>
 

@@ -54,6 +54,7 @@ function * initAppSaga ({ payload }) {
     // 進入 app 需要初始化的工作
     // ....
   } catch (error) {
+    // handle error instead of console log
     console.error('initAppSaga error:', error)
   }
 }
@@ -72,6 +73,7 @@ function * loginSaga ({ payload }) {
     // 顯示訊息
     window.alert(msg)
   } catch (error) {
+    // handle error instead of console log
     console.error('loginSaga error:', error)
   }
 }
@@ -103,6 +105,7 @@ function * authFlowSaga () {
       }
     }
   } catch (error) {
+    // handle error instead of console log
     console.error('authFlowSaga error:', error)
   }
 }
