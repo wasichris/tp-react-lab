@@ -1,12 +1,9 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import { connect } from 'react-redux'
-import { bindActionCreators, compose } from 'redux'
 import * as yup from 'yup'
 import strAccountSchema from '@src/utils/validations/strAccountSchema'
 import strTwIdSchema from '@src/utils/validations/strTwIdSchema'
-// import PropTypes from 'prop-types'
 
 class Practice09 extends React.Component {
   constructor (props) {
@@ -38,7 +35,7 @@ class Practice09 extends React.Component {
       this.setState({
         ...this.state,
         formInitValues: {
-          account: 'CHRIS',
+          account: 'QOO',
           name: '圓圈圈',
           id: 'A99999999',
           age: 0,
@@ -51,17 +48,17 @@ class Practice09 extends React.Component {
 
   // 表單檢核邏輯
   formSchema = () => yup.object().shape({
-    // 複合性自定義檢核
+    // [必填、小寫英文、不能為 admin 字串]
     account: yup.string().required().concat(strAccountSchema({ title: '帳號' })),
-    // 簡單檢核條件
+    // [必填]
     name: yup.string().required(),
-    // 複合性自定義檢核
+    // [必填、身分證邏輯]
     id: yup.string().required().concat(strTwIdSchema()),
-    // 簡單檢核條件
-    pcode: yup.string().required(),
-    // 動態決定檢核條件
+    // [必填、選擇性檢核需大於18歲邏輯] (相依狀態值)
     age: this.getAgeSchema(),
-    // 與表單內其他值有相依性
+    // [必填]
+    pcode: yup.string().required(),
+    // [密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同] (相依輸入值)
     pcodeConfirm: yup.string().when('pcode', (pcode, schema) => {
       return pcode ? schema.oneOf([pcode], '密碼需相同').required() : schema
     })
@@ -92,17 +89,17 @@ class Practice09 extends React.Component {
       <>
         <h1> 表單驗證 </h1>
         <p className='tp-desc'>
-          熟悉 <a target='blank' href='https://jaredpalmer.com/formik/'>FORMIK</a>  操作方式，使用 <a target='blank' href='https://github.com/jquense/yup'>Yup</a> 對目前的表單進行驗證，如驗證通過請將數值 alert 顯示。。
+          熟悉 <a target='blank' href='https://jaredpalmer.com/formik/'>FORMIK</a>  操作方式，使用 <a target='blank' href='https://github.com/jquense/yup'>Yup</a> 對目前的表單進行驗證，如驗證通過請將數值 alert 顯示。
         </p>
         <ol>
           <li>動態初始表單資料：於 componentDidMount 模擬從 api 取的表單資料，Formik 加註 enableReinitialize 屬性允許初始資料異動時可自動初始表單，顯示新資料於表單中。</li>
-          <li>異動資料內容：按下"設定年齡值為18"按鈕時，透過 setFieldValue 方法設定表單中 age 值為 18</li>
-          <li>[帳號]：必填、小寫英文、不能為 admin 字串</li>
-          <li>[姓名]：必填</li>
-          <li>[身分證號]：必填、身分證邏輯 <br />(請於 utils/validations/ 建立 strTwIdSchema.js 檢核邏輯，並於此套用)</li>
-          <li>[年齡]：必填、選擇性檢核需大於18歲邏輯 <br />(請依據 state.isCheckAgeRange 狀態決定是否進行檢核)</li>
-          <li>[密碼]：必填</li>
-          <li>[確認密碼]：密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同。<br />(請使用 yup.string().when() 實作)</li>
+          <li>異動資料內容：按下"設定年齡值為18"按鈕時，透過 setFieldValue 方法設定表單中 age 值為 18。</li>
+          <li>[帳號]：必填、小寫英文、不能為 admin 字串。</li>
+          <li>[姓名]：必填。</li>
+          <li>[身分證號]：必填、身分證邏輯，請於 utils/validations/ 建立 strTwIdSchema.js 身分證檢核邏輯。</li>
+          <li>[年齡]：必填、選擇性檢核需大於18歲邏輯，請依據 state.isCheckAgeRange 狀態決定是否進行18歲檢核。</li>
+          <li>[密碼]：必填。</li>
+          <li>[確認密碼]：密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同，請使用 yup.string().when() 實作。</li>
         </ol>
         <TpSection>
           <h3>會員註冊</h3>
@@ -197,17 +194,4 @@ class Practice09 extends React.Component {
   }
 }
 
-Practice09.propTypes = {
-  // setValues: PropTypes.func
-}
-
-const mapStateToProps = state => ({
-})
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-
-}, dispatch)
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
-)(Practice09)
+export default Practice09
