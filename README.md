@@ -38,9 +38,7 @@ npm start
 **啟動成功後請不要關閉命令提示字元/終端機視窗，網站服務才能使用**  
 練習項目時會使用到，於開發期間啟動此服務  
 執行成功後開啟 http://localhost:8888/ ，畫面如下  
-<!-- ![mock api首頁](src/assets/images/readme/mock.png )   -->
-
-<img src="src/assets/images/readme/mock.png" width="300">
+![mock api首頁](src/assets/images/readme/mock.png )  
 
 ***
 ## 專案執行(開發) ##
@@ -49,8 +47,7 @@ npm run start
 ```
 **啟動成功後請不要關閉命令提示字元/終端機視窗，網站才能使用**  
 執行成功後開啟 http://localhost:3310/ ，畫面如下  
-<!-- ![網站首頁](src/assets/images/readme/home.png)   -->
-<img src="src/assets/images/readme/home.png" width="700">
+![網站首頁](src/assets/images/readme/home.png)  
 
 ***
 ## 專案結構 ##
@@ -69,49 +66,40 @@ npm run start
 
 ***
 ## 練習項目01 - 輸入控制 ##
-<!-- ![輸入控制](src/assets/images/readme/practice01.png)   -->
-<img src="src/assets/images/readme/practice01.png" width="700">
+![輸入控制](src/assets/images/readme/practice01.png)  
 
 ***
 ## 練習項目02 - 父子組件溝通 ##
-<!-- ![父子組件溝通](src/assets/images/readme/practice02.png)   -->
-<img src="src/assets/images/readme/practice02.png" width="700">
+![父子組件溝通](src/assets/images/readme/practice02.png)  
 
 ***
 ## 練習項目03 - 於子組件中插入區塊 ##
-<!-- ![於子組件中插入區塊](src/assets/images/readme/practice03.png)   -->
-<img src="src/assets/images/readme/practice03.png" width="700">
+![於子組件中插入區塊](src/assets/images/readme/practice03.png)  
 
 ***
 ## 練習項目04 - 存取前端資訊 ##
-<!-- ![存取前端資訊](src/assets/images/readme/practice04.png)   -->
-<img src="src/assets/images/readme/practice04.png" width="700">
+![存取前端資訊](src/assets/images/readme/practice04.png)  
 
 ***
 ## 練習項目05 - 路由設定及轉址 ##
-<!-- ![路由設定及轉址](src/assets/images/readme/practice05.png)   -->
-<img src="src/assets/images/readme/practice05.png" width="700">
+![路由設定及轉址](src/assets/images/readme/practice05.png)  
 
 ***
 ## 練習項目06 - Redux 全域狀態控制 ##
-<!-- ![Redux 全域狀態控制](src/assets/images/readme/practice06.png)   -->
-<img src="src/assets/images/readme/practice06.png" width="700">
+![Redux 全域狀態控制](src/assets/images/readme/practice06.png)  
 
 ***
 ## 練習項目07 - 呼叫 API 取得資訊 ##
-<!-- ![呼叫 API 取得資訊](src/assets/images/readme/practice07.png)   -->
-<img src="src/assets/images/readme/practice07.png" width="700">
+![呼叫 API 取得資訊](src/assets/images/readme/practice07.png)  
 
 ***
 ## 練習項目08 - 使用 saga 完成登入流程 ##
-<!-- ![使用 saga 完成登入流程](src/assets/images/readme/practice08.png)   -->
-<img src="src/assets/images/readme/practice08.png" width="700">
+![使用 saga 完成登入流程](src/assets/images/readme/practice08.png)  
 
 
 ***
 ## 練習項目09 - 表單驗證 ##
-<!-- ![表單驗證](src/assets/images/readme/practice09.png|width=100px)   -->
-<img src="src/assets/images/readme/practice09.png" width="700">
+![表單驗證](src/assets/images/readme/practice09.png|width=100px)  
 
 ***
 ## 參考資料 ##

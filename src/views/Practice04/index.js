@@ -1,6 +1,6 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
-import storage from '@src/utils/storage'
+import storage from '@src/services/storage'
 
 class Practice04 extends React.Component {
   constructor (props) {
@@ -35,7 +35,7 @@ class Practice04 extends React.Component {
       <>
         <h1> 存取前端資訊 </h1>
         <p className='tp-desc'>
-          熟悉前端資訊封裝方式，請依照以下要求使用 utils\storage.js 存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
+          熟悉前端資訊封裝方式，請依照以下要求使用 \services\storage.js 存放以下資訊，重整頁面後可顯示存放於前端的資訊於輸入框下方。
         </p>
 
         <TpSection>
