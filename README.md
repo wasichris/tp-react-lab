@@ -99,7 +99,7 @@ npm run start
 
 ***
 ## 練習項目09 - 表單驗證 ##
-![表單驗證](src/assets/images/readme/practice09.png|width=100px)  
+![表單驗證](src/assets/images/readme/practice09.png)  
 
 ***
 ## 參考資料 ##
