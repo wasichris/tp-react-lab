@@ -1,11 +1,6 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
-import appModel from '@src/models/app'
-import { connect } from 'react-redux'
-import { bindActionCreators, compose } from 'redux'
-import PropTypes from 'prop-types'
-import get from 'lodash/get'
 import * as yup from 'yup'
 
 class Practice08 extends React.Component {
@@ -16,15 +11,10 @@ class Practice08 extends React.Component {
 
   handleLogin = async values => {
     const { id, pcode } = values
-    this.props.login({ id, pcode })
-  }
-
-  handleLogout = () => {
-    this.props.logout()
+    alert(`login by ${id} | ${pcode}`)
   }
 
   render () {
-    const { isLogin } = this.props
     return (
       <>
         <h1> 使用 saga 完成登入流程 </h1>
@@ -42,47 +32,41 @@ class Practice08 extends React.Component {
 
         <TpSection>
 
-          {isLogin
-            // ==== 已登入 ====
-            ? <button type='button' onClick={this.handleLogout}> 登出 </button>
-            // ==== 未登入 ====
-            : (
-              <>
-                <h3>請輸入帳號及密碼進行登入(密碼為111)</h3>
-                <Formik
-                  initialValues={{ id: 'ThinkPower', pcode: '' }}
-                  validationSchema={this.formSchema()}
-                  onSubmit={this.handleLogin}
-                >
+          {/* <button type='button'> 登出 </button> */}
 
-                  {({ isSubmitting }) => (
-                    <Form className='tp-form'>
+          <h3>請輸入帳號及密碼進行登入(密碼為111)</h3>
+          <Formik
+            initialValues={{ id: 'ThinkPower', pcode: '' }}
+            validationSchema={this.formSchema()}
+            onSubmit={this.handleLogin}
+          >
 
-                      <div className='tp-form__row'>
-                        <div className='tp-form__label'> 帳號 </div>
-                        <div className='tp-form__field'>
-                          <Field type='text' name='id' />
-                          <ErrorMessage name='id' component='div' className='tp-form__error' />
-                        </div>
-                      </div>
+            {({ isSubmitting }) => (
+              <Form className='tp-form'>
 
-                      <div className='tp-form__row'>
-                        <div className='tp-form__label'> 密碼 </div>
-                        <div className='tp-form__field'>
-                          <Field type='password' name='pcode' />
-                          <ErrorMessage name='pcode' component='div' className='tp-form__error' />
-                        </div>
-                      </div>
+                <div className='tp-form__row'>
+                  <div className='tp-form__label'> 帳號 </div>
+                  <div className='tp-form__field'>
+                    <Field type='text' name='id' />
+                    <ErrorMessage name='id' component='div' className='tp-form__error' />
+                  </div>
+                </div>
 
-                      <div className='tp-form__row tp-form__row--right'>
-                        <button type='submit' disabled={isSubmitting}> 登入 </button>
-                      </div>
+                <div className='tp-form__row'>
+                  <div className='tp-form__label'> 密碼 </div>
+                  <div className='tp-form__field'>
+                    <Field type='password' name='pcode' />
+                    <ErrorMessage name='pcode' component='div' className='tp-form__error' />
+                  </div>
+                </div>
 
-                    </Form>
-                  )}
-                </Formik>
-              </>
+                <div className='tp-form__row tp-form__row--right'>
+                  <button type='submit' disabled={isSubmitting}> 登入 </button>
+                </div>
+
+              </Form>
             )}
+          </Formik>
 
         </TpSection>
 
@@ -91,21 +75,4 @@ class Practice08 extends React.Component {
   }
 }
 
-Practice08.propTypes = {
-  login: PropTypes.func,
-  logout: PropTypes.func,
-  isLogin: PropTypes.bool
-}
-
-const mapStateToProps = state => ({
-  isLogin: get(state, 'app.isLogin', 0)
-})
-
-const mapDispatchToProps = dispatch => bindActionCreators({
-  login: appModel.action.login,
-  logout: appModel.action.logout
-}, dispatch)
-
-export default compose(
-  connect(mapStateToProps, mapDispatchToProps)
-)(Practice08)
+export default Practice08

@@ -21,9 +21,7 @@ class Practice03 extends React.Component {
           <div>父層組件</div>
 
           {/* 子組件 */}
-          <Practice03Child top={this.top} bottom={this.bottom}>
-            {this.middle}
-          </Practice03Child>
+          <Practice03Child />
 
         </TpSection>
 

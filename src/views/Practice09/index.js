@@ -3,7 +3,6 @@ import TpSection from '@src/components/TpSection/index'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import strAccountSchema from '@src/utils/validations/strAccountSchema'
-import strTwIdSchema from '@src/utils/validations/strTwIdSchema'
 
 class Practice09 extends React.Component {
   constructor (props) {
@@ -32,17 +31,7 @@ class Practice09 extends React.Component {
   getUserInfoToFillForm = () => {
     setTimeout(() => {
       // 再次初始化表單資料
-      this.setState({
-        ...this.state,
-        formInitValues: {
-          account: 'QOO',
-          name: '圓圈圈',
-          id: 'A99999999',
-          age: 0,
-          pcode: '123',
-          pcodeConfirm: '456'
-        }
-      })
+      // ....
     }, 1000)
   }
 
@@ -51,32 +40,19 @@ class Practice09 extends React.Component {
     // [必填、小寫英文、不能為 admin 字串]
     account: yup.string().required().concat(strAccountSchema({ title: '帳號' })),
     // [必填]
-    name: yup.string().required(),
+    name: null,
     // [必填、身分證邏輯]
-    id: yup.string().required().concat(strTwIdSchema()),
+    id: null,
     // [必填、選擇性檢核需大於18歲邏輯] (相依狀態值)
-    age: this.getAgeSchema(),
+    age: null,
     // [必填]
-    pcode: yup.string().required(),
+    pcode: null,
     // [密碼欄位輸入後才檢核。必填、需與密碼欄位輸入的資訊相同] (相依輸入值)
-    pcodeConfirm: yup.string().when('pcode', (pcode, schema) => {
-      return pcode ? schema.oneOf([pcode], '密碼需相同').required() : schema
-    })
+    pcodeConfirm: null
   });
-
-  getAgeSchema = () => {
-    const { isCheckAgeRange } = this.state
-    const required = yup.number().required()
-    const min = yup.number().min(18)
-    return required.concat(isCheckAgeRange ? min : null)
-  }
 
   handleSwitchAgeRangeChecker = () => {
     this.setState({ ...this.state, isCheckAgeRange: !this.state.isCheckAgeRange })
-  }
-
-  handleChangeAgeTo18 = setFieldValue => e => {
-    setFieldValue('age', 18)
   }
 
   handleRegister = async values => {
@@ -115,7 +91,7 @@ class Practice09 extends React.Component {
               // Formik render methods and props
               // https://jaredpalmer.com/formik/docs/api/formik#formik-render-methods-and-props
               this.formik = formik // 如果需要在此組件外操作 formik 時可以使用
-              const { isSubmitting, values, setFieldValue } = formik
+              const { isSubmitting, values } = formik
               return (
                 <Form className='tp-form'>
 
@@ -174,7 +150,7 @@ class Practice09 extends React.Component {
                   </div>
 
                   <div className='tp-form__row tp-form__row--right'>
-                    <button type='button' onClick={this.handleChangeAgeTo18(setFieldValue)}> 設定年齡值為18 </button>
+                    <button type='button'> 設定年齡值為18 </button>
                     <button type='button' onClick={this.handleSwitchAgeRangeChecker}> 是否檢查年齡區間: {this.state.isCheckAgeRange ? 'Y' : 'N'}  </button>
                   </div>
 

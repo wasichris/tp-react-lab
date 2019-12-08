@@ -1,6 +1,5 @@
 import React from 'react'
 import TpSection from '@src/components/TpSection/index'
-import storage from '@src/utils/storage'
 
 class Practice04 extends React.Component {
   constructor (props) {
@@ -10,24 +9,6 @@ class Practice04 extends React.Component {
       id: '',
       name: ''
     }
-  }
-
-  handleTokenSave = () => {
-    // save token to session storage
-    storage.token.value = this.state.token
-    this.forceUpdate()
-  }
-
-  handleIdSave = () => {
-    // save id to local storage
-    storage.id.value = this.state.id
-    this.forceUpdate()
-  }
-
-  handleNameSave = () => {
-    // save name to cookie
-    storage.name.value = this.state.name
-    this.forceUpdate()
   }
 
   render () {
@@ -41,25 +22,25 @@ class Practice04 extends React.Component {
         <TpSection>
           <div>存放 token 於 session storage 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, token: e.target.value })} />
-          <button onClick={this.handleTokenSave}>save</button>
+          <button>save</button>
 
-          <div className='tp-hint'>您存放的 token 資料: {storage.token.value} </div>
+          <div className='tp-hint'>您存放的 token 資料: OO </div>
         </TpSection>
 
         <TpSection>
           <div>存放 id 於 local storage 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, id: e.target.value })} />
-          <button onClick={this.handleIdSave}>save</button>
+          <button>save</button>
 
-          <div className='tp-hint'>您存放的 id 資料: {storage.id.value} </div>
+          <div className='tp-hint'>您存放的 id 資料: OO </div>
         </TpSection>
 
         <TpSection>
           <div>存放 name 於 cookie 中</div>
           <input type='text' onChange={e => this.setState({ ...this.state, name: e.target.value })} />
-          <button onClick={this.handleNameSave}>save</button>
+          <button>save</button>
 
-          <div className='tp-hint'>您存放的 name 資料: {storage.name.value} </div>
+          <div className='tp-hint'>您存放的 name 資料: OO </div>
         </TpSection>
 
       </>

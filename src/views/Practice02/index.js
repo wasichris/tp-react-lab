@@ -14,10 +14,6 @@ class Practice02 extends React.Component {
     this.setState({ ...this.state, phone: e.target.value })
   }
 
-  handleChildPhoneChange = newPhone => {
-    this.setState({ ...this.state, phone: newPhone })
-  }
-
   render () {
     const { phone } = this.state
     return (
@@ -35,7 +31,7 @@ class Practice02 extends React.Component {
           <div className='tp-hint'> 內部使用的數值(state): {phone} </div>
 
           {/* 子組件 */}
-          <Practice02Child value={phone} onValueChange={this.handleChildPhoneChange} />
+          <Practice02Child />
 
         </TpSection>
 
