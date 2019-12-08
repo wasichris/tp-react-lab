@@ -31,7 +31,7 @@ npm install
 
 ***
 ## 啟動 Mock Api 服務 ##
-請使用 tpi-react-lab-mock-api 專案作為 mock api 提供者。
+請使用 com.thinkpower.mockapi 專案作為 mock api 提供者。
 ```
 npm start
 ```

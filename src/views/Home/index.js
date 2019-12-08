@@ -6,7 +6,7 @@ export default () =>
   <>
     <img src={logo} className='app-logo' alt='logo' />
 
-    <h2> 練習主題 </h2>
+    <h2> React Lab 練習主題 </h2>
     <ul>
 
       <li><Link to='/p1'>Practice01 - 輸入控制</Link></li>
