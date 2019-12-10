@@ -102,6 +102,10 @@ npm run start
 ![表單驗證](src/assets/images/readme/practice09.png)  
 
 ***
+## 練習項目10 - 熟悉 Hook 操作方式 ##
+![熟悉 Hook 操作方式](src/assets/images/readme/practice10.png)  
+
+***
 ## 參考資料 ##
 * 為你自己學 Git - https://gitbook.tw
 * Bitbucket - https://bitbucket.org
@@ -118,3 +122,5 @@ npm run start
 * redux saga - https://redux-saga.js.org/
 * formik - https://jaredpalmer.com/formik/docs/overview
 * yup - https://github.com/jquense/yup 
+* Hook - https://en.reactjs.org/docs/hooks-intro.html
+* useEffect 的完整指南 - https://overreacted.io/zh-hant/a-complete-guide-to-useeffect/

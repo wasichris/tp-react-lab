@@ -250,6 +250,27 @@ input {
   }
 }
 
+.tp-count-down-timer {
+  font-family: 'Share Tech Mono', monospace;
+  color: #daf6ff;
+  text-shadow: 0 0 10px rgba(10, 175, 230, 1),  0 0 10px; 
+  margin: 10px 0;
+  padding: 0 10px;
+  border: 1px solid;
+  display: table;
+  width: auto;
+  border-radius: 5px;
+  background: $body-bg-color;
+
+  &__time {
+    letter-spacing: 0.05em;
+    font-size: 60px;
+    padding: 5px 0;
+  }
+
+}
+
+
 // =================== other ======================
 
 .tp-desc {
