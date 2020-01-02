@@ -36,7 +36,7 @@ class Practice08 extends React.Component {
 
           <h3>請輸入帳號及密碼進行登入(密碼為111)</h3>
           <Formik
-            initialValues={{ id: 'ThinkPower', pcode: '' }}
+            initialValues={{ id: 'Chris', pcode: '' }}
             validationSchema={this.formSchema()}
             onSubmit={this.handleLogin}
           >
