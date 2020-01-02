@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import TpSection from '@src/components/TpSection/index'
 import TpSwitch from '@src/components/TpSwitch/index'
-
-import styled, { css, ThemeProvider } from 'styled-components'
+import styled from 'styled-components'
 
 const Button = styled.button`
   background: transparent;
@@ -15,30 +14,23 @@ const Button = styled.button`
   &:hover{
     box-shadow: 2px 2px 4px 0px #7a7a7a;
   }
-
-  ${props =>
-    props.primary &&
-    css`
-      background: palevioletred;
-      color: white;
-    `};
 `
 
-const TallButton = styled(Button)`
-  padding: 2em 0.5em;
+const TallButton = styled.button`
 `
 
 // =====
 
+// eslint-disable-next-line no-unused-vars
 const theme = (isDarkMode) => ({
   fg: isDarkMode ? 'white' : 'palevioletred',
   bg: isDarkMode ? '#3E3E3E' : 'white'
 })
 
 const ThemeButton = styled.button`
-color: ${props => props.theme.fg};
-border: 2px solid ${props => props.theme.fg};
-background: ${props => props.theme.bg};
+color: palevioletred;
+border: 2px solid palevioletred;
+background: white;
 font-size: 1em;
 margin: 1em 1em 1em 0;
 padding: 0.25em 1em;
@@ -47,8 +39,8 @@ cursor: pointer;
 `
 
 const ThemeInput = styled.input`
-color: ${props => props.theme.fg};
-background: ${props => props.theme.bg};
+color: palevioletred;
+background: white;
 font-size: 1em;
 margin: 1em 1em 1em 0;
 padding: 0.25em 1em;
@@ -87,13 +79,11 @@ const Practice11 = () => {
 
         <TpSection>
           <p><b>主題樣式</b>：以 ThemeProvider 將 ThemeButton 及 ThemeInput 組件套上 theme 主題樣式，並使用 isDarkMode 狀態來動態切換主題樣式。 </p>
-          <ThemeProvider theme={theme(isDarkMode)}>
-            <SwitchWrapper>
+          <SwitchWrapper>
               Dark Mode <TpSwitch value={isDarkMode} onChange={isOn => setIsDarkMode(isOn)} />
-            </SwitchWrapper>
-            <ThemeButton> I'm the ThemeButton </ThemeButton>
-            <ThemeInput placeholder='I am the ThemeInput' />
-          </ThemeProvider>
+          </SwitchWrapper>
+          <ThemeButton> I'm the ThemeButton </ThemeButton>
+          <ThemeInput placeholder='I am the ThemeInput' />
         </TpSection>
 
       </header>
