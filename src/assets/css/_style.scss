@@ -13,9 +13,9 @@ a {
   text-decoration: none;
 }
 
-// input {
-//   margin: 5px 0 0 0;
-// }
+*:focus {
+  outline: none;
+}
 
 p, ul, li {
   line-height: 1.5;

@@ -19,5 +19,6 @@ export default () =>
       <li><Link to='/p8'>Practice08 - 使用 saga 完成登入流程</Link></li>
       <li><Link to='/p9'>Practice09 - 表單驗證</Link></li>
       <li><Link to='/p10'>Practice10 - 熟悉 Hook 操作方式</Link></li>
+      <li><Link to='/p11'>Practice11 - 熟悉 styled-components 操作方式</Link></li>
     </ul>
   </>

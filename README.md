@@ -47,7 +47,7 @@ npm run start
 ```
 **啟動成功後請不要關閉命令提示字元/終端機視窗，網站才能使用**  
 執行成功後開啟 http://localhost:3310/ ，畫面如下  
-![網站首頁](src/assets/images/readme/home.png)  
+![網站首頁|100x](src/assets/images/readme/home.png)  
 
 ***
 ## 專案結構 ##
@@ -104,6 +104,10 @@ npm run start
 ***
 ## 練習項目10 - 熟悉 Hook 操作方式 ##
 ![熟悉 Hook 操作方式](src/assets/images/readme/practice10.png)  
+
+***
+## 練習項目11 - 熟悉 styled-components 操作方式 ##
+![熟悉 styled-components 操作方式](src/assets/images/readme/practice11.png)  
 
 ***
 ## 參考資料 ##
