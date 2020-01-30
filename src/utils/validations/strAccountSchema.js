@@ -1,7 +1,7 @@
 /* eslint-disable no-template-curly-in-string */
 import * as yup from 'yup'
 
-export default ({ title }) => yup.string().test({
+export default ({ title } = { title: '' }) => yup.string().test({
   name: 'accountSchema', // 檢核名稱 (不重複，套件內部使用)
   exclusive: true, // 如果有相同名稱的檢核時，使用此獨家的檢核邏輯
   params: { title }, // 插入錯誤訊息的參數定義

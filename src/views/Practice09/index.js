@@ -35,8 +35,8 @@ class Practice09 extends React.Component {
       this.setState({
         ...this.state,
         formInitValues: {
-          account: 'QOO',
-          name: '圓圈圈',
+          account: 'CHRIS',
+          name: '克里斯',
           id: 'A99999999',
           age: 0,
           pcode: '123',
