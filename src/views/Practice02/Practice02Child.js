@@ -6,20 +6,27 @@ class Practice02Child extends React.Component {
   constructor (props) {
     super(props)
     this.state = {
-      internalValue: 0
+      internalValue: 0,
+      prevPropValue: '' // 存放前一次的 value prop
     }
   }
 
   static getDerivedStateFromProps (props, state) {
-    if (props.value !== state.internalValue) {
-      return { ...state, internalValue: props.value }
+    // 將 value prop 同步異動子組件的 internalValue state 值
+    // (判斷 value prop 與 前一次的 value prop 不同時才變動)
+    if (props.value !== state.prevPropValue) {
+      return { ...state, internalValue: props.value, prevPropValue: props.value }
     }
 
     return null // 回傳 null 表示 state 無異動
   }
 
   handleInternalValueChange = e => {
-    this.props.onValueChange(e.target.value) // 通知父組件數值異動
+    // 當 input 被修改時，透過 onChange prop 通知父組件
+    this.props.onValueChange(e.target.value)
+
+    // 同步異動 internalValue state 值
+    this.setState({ ...this.state, internalValue: e.target.value })
   }
 
   render () {
