@@ -20,5 +20,6 @@ export default () =>
       <li><Link to='/p9'>Practice09 - 表單驗證</Link></li>
       <li><Link to='/p10'>Practice10 - 熟悉 Hook 操作方式</Link></li>
       <li><Link to='/p11'>Practice11 - 熟悉 styled-components 操作方式</Link></li>
+      <li><Link to='/p12'>Practice12 - 熟悉 Context 操作方式</Link></li>
     </ul>
   </>
