@@ -48,10 +48,10 @@ class App extends React.Component {
   }
 
   render () {
+    const basename = process.env.ROOT_PATH || '/'
     return (
-      <Router>
+      <Router basename={basename}>
         <div className='app'>
-
           {/* header */}
           <header className='app-header'>
             <div className='app-header__container'>
