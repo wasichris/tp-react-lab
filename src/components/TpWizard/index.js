@@ -2,13 +2,17 @@ import React, { useState, useEffect } from 'react'
 import PropTypes from 'prop-types'
 import ProgressBar from './ProgressBar'
 
-const injectPropsInStep = ({ step, ...options }) => React.cloneElement(step, options)
-
 const TpWizard = ({ children, onDone } = { children: [] }) => {
   const [stepIndex, setStepIndex] = useState(1)
   const [formValue, setFormValue] = useState({})
 
+  // total step amount
   const totalSteps = children.length
+
+  // scroll top while step change
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [stepIndex])
 
   // go next
   const goNext = (newFormValue) => go(stepIndex + 1, newFormValue)
@@ -34,22 +38,17 @@ const TpWizard = ({ children, onDone } = { children: [] }) => {
     }
   }
 
-  // scroll top while step change
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [stepIndex])
-
   // find current step
   const step = React.Children.toArray(children)[stepIndex - 1]
   const currentStepWithProps = step
-    ? injectPropsInStep({ step, go, goNext, goPrevious, formValue }) : null
+    ? React.cloneElement(step, { go, goNext, goPrevious, formValue }) : null
 
   // render
   return (
-    <>
+    <div className='tp-section'>
       <ProgressBar current={stepIndex} total={totalSteps} />
       {currentStepWithProps}
-    </>
+    </div>
 
   )
 }

@@ -4,8 +4,11 @@ import PropTypes from 'prop-types'
 const Step4Result = ({ formValue, go }) => {
   return (
     <>
-      <h3>Result - Success</h3>
+      <h3>RESULT</h3>
       <div className='tp-form'>
+        <div className='tp-form__row'>
+          Success
+        </div>
         <div className='tp-form__row'>
           <div className='tp-code'>
             {formValue ? JSON.stringify(formValue, null, 2) : ''}

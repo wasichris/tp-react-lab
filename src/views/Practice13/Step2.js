@@ -12,7 +12,7 @@ const Step2 = ({ goNext, goPrevious, formValue }) => {
 
   return (
     <>
-      <h3>step 2</h3>
+      <h3>STEP 2</h3>
       <div className='tp-form'>
         <div className='tp-form__row'>
           <label className='tp-form__label' htmlFor='phone'>電話</label>
