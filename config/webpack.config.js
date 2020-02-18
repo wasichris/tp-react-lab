@@ -28,6 +28,10 @@ const typescriptFormatter = require('react-dev-utils/typescriptFormatter')
 // eslint-disable-next-line no-unused-vars
 const eslint = require('eslint')
 
+// Add GitRevisionPlugin plugin
+const GitRevisionPlugin = require('git-revision-webpack-plugin')
+const gitRevisionPlugin = new GitRevisionPlugin()
+
 const postcssNormalize = require('postcss-normalize')
 
 const appPackageJson = require(paths.appPackageJson)
@@ -519,10 +523,16 @@ module.exports = function (webpackEnv) {
       ]
     },
     plugins: [
+      // 取得 local git 資訊的插件
+      gitRevisionPlugin,
+
       // Generates an `index.html` file with the <script> injected.
       new HtmlWebpackPlugin(
         Object.assign(
-          {},
+          {
+            // 加入版本資訊 => v版本號-版控HASH碼@建置時間
+            vInfo: `v${process.env.npm_package_version}-${gitRevisionPlugin.version()}@${Date.now()}`
+          },
           {
             inject: true,
             template: paths.appHtml
