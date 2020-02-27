@@ -22,6 +22,7 @@ const Practice10 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/vi
 const Practice11 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice11/index'))
 const Practice12 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice12/index'))
 const Practice13 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice13/index'))
+const Practice14 = lazy(() => import(/* webpackChunkName: "practice" */ '@src/views/Practice14/index'))
 
 // // 如果想避免時間短暫造成畫面閃爍，可以給予時間延遲
 // const Practice01 = lazy(() => {
@@ -104,6 +105,9 @@ class App extends React.Component {
                 <div className='app-header__nav-item'>
                   <NavLink activeClassName='app-header__nav-item--active' to='/p13'>Practice13</NavLink>
                 </div>
+                <div className='app-header__nav-item'>
+                  <NavLink activeClassName='app-header__nav-item--active' to='/p14'>Practice14</NavLink>
+                </div>
               </div>
 
             </div>
@@ -129,6 +133,7 @@ class App extends React.Component {
                   <Route path='/p11' component={Practice11} />
                   <Route path='/p12' component={Practice12} />
                   <Route path='/p13' component={Practice13} />
+                  <Route path='/p14' component={Practice14} />
                   <Route path='/' component={Home} />
                 </Switch>
               </Suspense>

@@ -22,5 +22,6 @@ export default () =>
       <li><Link to='/p11'>Practice11 - 熟悉 styled-components 操作方式</Link></li>
       <li><Link to='/p12'>Practice12 - 熟悉 Context 操作方式</Link></li>
       <li><Link to='/p13'>Practice13 - 打造 Wizard 共用組件</Link></li>
+      <li><Link to='/p14'>Practice14 - 打造 Modal 共用組件</Link></li>
     </ul>
   </>
