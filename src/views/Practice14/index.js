@@ -8,7 +8,7 @@ const ModalFooter = styled.div`
   flex-direction: row-reverse;
 `
 const ModalContent = styled.div`
-
+  margin-bottom: 15px;
 `
 
 const Practice14 = () => {
@@ -19,39 +19,35 @@ const Practice14 = () => {
   }
 
   return (
-    <div className='App'>
-
-      <header className='App-header'>
-        <h1> 打造 Modal 共用組件 </h1>
-        <p className='tp-desc'>
+    <>
+      <h1> 打造 Modal 共用組件 </h1>
+      <p className='tp-desc'>
             建立 Modal 組件。
-        </p>
-        <TpSection>
+      </p>
+      <TpSection>
 
-          {/* 彈跳視窗 */}
-          <TpModal
-            title='Welcome'
-            isVisible={isVisible}
-            onClose={handleToggleModalShowUp}
-          >
+        {/* 開起視窗按鈕 */}
+        <input type='button' value='Show Modal' onClick={handleToggleModalShowUp} />
 
-            <ModalContent>
-              Would you like to join this team?
-            </ModalContent>
-            <ModalFooter>
-              <button onClick={handleToggleModalShowUp}>Yes</button>
-              <button onClick={handleToggleModalShowUp}>Cancel</button>
-            </ModalFooter>
+        {/* 彈跳視窗 */}
+        <TpModal
+          title='Welcome'
+          isVisible={isVisible}
+          onClose={handleToggleModalShowUp}
+        >
 
-          </TpModal>
+          <ModalContent>
+            <div> Would you like to join this team?</div>
+          </ModalContent>
+          <ModalFooter>
+            <button onClick={handleToggleModalShowUp}>Yes</button>
+            <button onClick={handleToggleModalShowUp}>Cancel</button>
+          </ModalFooter>
 
-          <input type='button' value='Show Modal' onClick={handleToggleModalShowUp} />
+        </TpModal>
 
-        </TpSection>
-
-      </header>
-
-    </div>
+      </TpSection>
+    </>
   )
 }
 

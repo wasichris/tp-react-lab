@@ -58,30 +58,27 @@ const Practice12 = () => {
   }, [isDarkMode])
 
   return (
-    <div className='App'>
+    <>
       {/* 加入 ThemeContext Provider 於使用範圍上，加入 context value 值向子組件傳遞 */}
       <ThemeContext.Provider value={themeMode}>
 
-        <header className='App-header'>
-          <h1> 熟悉 Context 操作方式 </h1>
-          <p className='tp-desc'>
+        <h1> 熟悉 Context 操作方式 </h1>
+        <p className='tp-desc'>
             理解 Context 的設計概念，設計 React 組件中共享資料；
             請使用 createContext 建立 ThemeContext 來傳遞 themes 定義的 light 與 dark 樣式至子組件中，為方便測試則透過 TpSwitch 切換兩模式，最後使用 useContext 將樣式套用在 TpCard 測試子組件中。
-          </p>
+        </p>
 
-          <TpSection>
-            <SwitchWrapper>
+        <TpSection>
+          <SwitchWrapper>
               Dark Mode <TpSwitch value={isDarkMode} onChange={isOn => setIsDarkMode(isOn)} />
-            </SwitchWrapper>
+          </SwitchWrapper>
 
-            {/* 可以收到父層 ThemeContext Provider 向子組件傳遞的 themeMode 數值 */}
-            <TpCard />
-          </TpSection>
-
-        </header>
+          {/* 可以收到父層 ThemeContext Provider 向子組件傳遞的 themeMode 數值 */}
+          <TpCard />
+        </TpSection>
 
       </ThemeContext.Provider>
-    </div>
+    </>
   )
 }
 
