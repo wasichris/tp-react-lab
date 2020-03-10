@@ -1,6 +1,8 @@
 
-import React, { useState, useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
+// import useTimer from '@src/utils/hooks/useTimer'
+// const remainSecond = useTimer(onTimeUp, seconds)
 
 const CountDownTimer = ({ seconds, onTimeUp }) => {
   // state
@@ -9,6 +11,7 @@ const CountDownTimer = ({ seconds, onTimeUp }) => {
   // effect
   useEffect(() => {
     const countDownSecond = seconds
+    setRemainSecond(seconds)
 
     // 產生 Timer
     console.log(`[timer] == start count down ${countDownSecond}s  ==`)

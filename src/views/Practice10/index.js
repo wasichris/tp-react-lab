@@ -1,9 +1,18 @@
-import React, { useState } from 'react'
+import React, { useState, useCallback } from 'react'
 import CountDownTimer from './CountDownTimer'
 import TpSection from '@src/components/TpSection/index'
 
 const Practice10 = () => {
   const [seconds, setSeconds] = useState(10)
+
+  // useCallback 會回傳該 callback 的 memoized 版本，它僅在依賴改變時才會更新
+  // 當傳遞 callback 到已經最佳化的 child component 時非常有用，這些 child component 依賴於引用相等性來防止不必要的 render
+  const handleTimeup = useCallback(
+    () => {
+      console.log('time up!!')
+    },
+    []
+  )
 
   return (
     <>
@@ -14,7 +23,7 @@ const Practice10 = () => {
 
       <TpSection>
           請輸入倒數秒數 <input value={seconds} type='number' onChange={e => setSeconds(Number(e.target.value) || 0)} />
-        <CountDownTimer seconds={seconds} onTimeUp={() => { console.log('time up!!') }} />
+        <CountDownTimer seconds={seconds} onTimeUp={handleTimeup} />
       </TpSection>
 
     </>
