@@ -1,7 +1,19 @@
-import React, { useRef, useEffect, useCallback, useState } from 'react'
+import React, { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
+
+const getScrollbarWidth = () => {
+  // 取得的寬度有一點誤差，在此僅做練習使用
+  const outer = document.createElement('div')
+  const inner = document.createElement('div')
+  outer.style.overflow = 'scroll'
+  document.body.appendChild(outer)
+  outer.appendChild(inner)
+  const scrollbarWidth = outer.offsetWidth - inner.offsetWidth
+  document.body.removeChild(outer)
+  return scrollbarWidth
+}
 
 const TpModal = ({ title, isVisible, children, maxWidth, target, onClose } = { children: [] }) => {
   // 將彈跳視窗移出到特定的元素上
@@ -44,20 +56,27 @@ const TpModal = ({ title, isVisible, children, maxWidth, target, onClose } = { c
     }
   }, [handleKeyDown, isVisible])
 
+  // 取得 scrollbar 寬度 (使用 useMemo 執行傷效能的動作一次就好)
+  const memoizedScrollbarWidth = useMemo(getScrollbarWidth, [])
+
   // 記住原本在 html 及 body 的 overflow 樣式 (當 modal 消失時復原樣式使用)
   const [[htmlOverflow, bodyOverflow]] =
     useState([document.querySelector('html').style.overflow, document.querySelector('body').style.overflow])
 
   // 讓畫面被鎖定來避免畫面滾動的混亂
   useEffect(() => {
-    if (isVisible) {
+    const hasScrollbar = window.innerWidth > document.body.clientWidth
+    if (isVisible && hasScrollbar) {
+      // 補上原本 scrollbar 寬度，盡量減少畫面的明顯位移
+      document.querySelector('html').style.paddingRight = memoizedScrollbarWidth + 'px'
       document.querySelector('html').style.overflow = 'hidden'
       document.querySelector('body').style.overflow = 'hidden'
     } else {
+      document.querySelector('html').style.paddingRight = '0px'
       document.querySelector('html').style.overflow = htmlOverflow
       document.querySelector('body').style.overflow = bodyOverflow
     }
-  }, [bodyOverflow, htmlOverflow, isVisible])
+  }, [bodyOverflow, htmlOverflow, isVisible, memoizedScrollbarWidth])
 
   // render
   return isVisible
