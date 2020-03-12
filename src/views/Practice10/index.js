@@ -7,12 +7,7 @@ const Practice10 = () => {
 
   // useCallback 會回傳該 callback 的 memoized 版本，它僅在依賴改變時才會更新
   // 當傳遞 callback 到已經最佳化的 child component 時非常有用，這些 child component 依賴於引用相等性來防止不必要的 render
-  const handleTimeup = useCallback(
-    () => {
-      console.log('time up!!')
-    },
-    []
-  )
+  const handleTimeup = useCallback(() => console.log('time up!!'), [])
 
   return (
     <>

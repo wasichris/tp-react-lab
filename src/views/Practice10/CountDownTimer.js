@@ -1,10 +1,17 @@
 
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
-// import useTimer from '@src/utils/hooks/useTimer'
-// const remainSecond = useTimer(onTimeUp, seconds)
+import useTimer from '@src/utils/hooks/useTimer'
 
 const CountDownTimer = ({ seconds, onTimeUp }) => {
+  // ===== solution A ======
+
+  const remainSecond = useTimer(onTimeUp, seconds)
+
+  // ===== solution B ======
+
+  /*
+
   // state
   const [remainSecond, setRemainSecond] = useState(0)
 
@@ -37,6 +44,8 @@ const CountDownTimer = ({ seconds, onTimeUp }) => {
       console.log(`[timer] == stop count down ${countDownSecond}s  ==`)
     }
   }, [onTimeUp, seconds]) // 相依 prop / state 值的 Effect
+
+  */
 
   return (
     <div className='tp-count-down-timer'>
