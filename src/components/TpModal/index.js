@@ -2,6 +2,7 @@ import React, { useRef, useEffect, useCallback, useState, useMemo } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import ReactDOM from 'react-dom'
+import TpXBtn from '@src/components/TpXBtn'
 
 const getScrollbarWidth = () => {
   // 取得的寬度有一點誤差，在此僅做練習使用
@@ -88,7 +89,7 @@ const TpModal = ({ title, isVisible, children, maxWidth, target, onClose } = { c
           {/* 標頭 */}
           <ModalHeader>
             <ModalTitle> {title} </ModalTitle>
-            <ModalCloseBtn onClick={onClose} />
+            <TpXBtn margin='15' size='15' color='#333' onClick={onClose} />
           </ModalHeader>
 
           {/* 內容 */}
@@ -151,38 +152,6 @@ const ModalContent = styled.div`
   padding: 0 20px 20px 20px;
   overflow-y: auto;
   max-height: 50vh;
-`
-
-const ModalCloseBtn = styled.div`
-  cursor:pointer;
-  position: absolute;
-  right: 15px;
-  top: 15px;
-  width: 15px;
-  height: 15px;
-  opacity: 0.3;
-
-  :hover {
-    opacity: 1;
-  }
-
-  :before, :after {
-    position: absolute;
-    left: 7px;
-    content: ' ';
-    height: 15px;
-    width: 1px;
-    background-color: #333;
-  }
-
-  :before {
-    transform: rotate(45deg);
-  }
-  
-  :after {
-    transform: rotate(-45deg);
-  }
-
 `
 
 export default TpModal
