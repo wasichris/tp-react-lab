@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import React, { useState } from 'react'
 import TpImageUpload from '@src/components/TpImageUpload'
+import api from '@src/services/api'
 
 const Practice15 = () => {
   const [files, setFiles] = useState([])
@@ -13,9 +14,18 @@ const Practice15 = () => {
     setFiles([])
   }
 
-  const handleUploadFiles = (e) => {
+  const handleUploadFiles = async (e) => {
     e.preventDefault()
     console.log(files.map(file => file.url))
+
+    // prepare form data
+    var formData = new FormData()
+    files.forEach(file => formData.append('file', file.raw))
+    formData.append('userId', 'wasichris')
+
+    // call api
+    const resp = await api.uploadImage(formData)
+    console.log(resp)
   }
 
   return (

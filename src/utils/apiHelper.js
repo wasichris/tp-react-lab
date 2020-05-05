@@ -4,6 +4,26 @@ import constant from '@src/constants'
 // 發送 request 需夾帶 cookie
 axios.defaults.withCredentials = true
 
+const postFile = async (url, formData = {}) => {
+  return axios.post(
+    url,
+    formData,
+    {
+      baseURL: constant.apiUrl,
+      timeout: constant.timeout,
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      },
+      responseType: 'json'
+    }
+  ).then(async (res) => {
+    const { data } = res
+    return data
+  }).catch(error => {
+    return errorHandle(url, error)
+  })
+}
+
 // 使用 post 送出資料
 const post = async (url, reqData) => {
   return axios.post(
@@ -55,5 +75,6 @@ const errorHandle = (url, error) => {
 
 export {
   post,
+  postFile,
   get
 }

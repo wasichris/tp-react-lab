@@ -1,4 +1,4 @@
-import { post } from '@src/utils/apiHelper'
+import { post, postFile } from '@src/utils/apiHelper'
 
 export default {
 
@@ -27,5 +27,10 @@ export default {
   // }
   login: ({ id, pcode }) => {
     return post('/lab/login', { id, pcode })
+  },
+
+  /* 上傳檔案 */
+  uploadImage: (formData) => {
+    return postFile('/lab/uploadImage', formData)
   }
 }
