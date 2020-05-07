@@ -23,6 +23,6 @@ export default () =>
       <li><Link to='/p12'>Practice12 - 熟悉 Context 操作方式</Link></li>
       <li><Link to='/p13'>Practice13 - 打造 Wizard 共用組件</Link></li>
       <li><Link to='/p14'>Practice14 - 打造 Modal 共用組件</Link></li>
-      <li><Link to='/p15'>Practice14 - 打造 Upload File 共用組件</Link></li>
+      <li><Link to='/p15'>Practice15 - 打造 Upload File 共用組件</Link></li>
     </ul>
   </>

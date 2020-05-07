@@ -60,7 +60,7 @@ class App extends React.Component {
             <div className='app-header__container'>
 
               {/* logo */}
-              <div className='app-header__logo'> ThinkPower </div>
+              <div className='app-header__logo'> React Lab </div>
 
               {/* nav */}
               <div className='app-header__nav'>

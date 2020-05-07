@@ -1,4 +1,4 @@
-# Thinkpower - React.js Labs #
+# React.js Labs #
 本專案使用 **creaet-react-app 3.2.0** 建立專案，提供可運作的開發環境，透過練習項目更了解 Javascript 與 ES 6 語法並且實際練習使用 React.js，以達到熟悉使用 React.js 開發之目的；此練習專案重點會放在 React.js 上面，對於 javascript 的語言特性與新版語法沒有太多著墨。文件最後會附上所有相關的參考資料連結，可依需要自行查閱。
 
 
