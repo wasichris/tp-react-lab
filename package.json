@@ -23,7 +23,8 @@
     "redux-promise": "^0.6.0",
     "redux-saga": "^1.1.1",
     "styled-components": "^4.4.1",
-    "yup": "^0.27.0"
+    "yup": "^0.27.0",
+    "command-line-args": "^5.1.1"
   },
   "devDependencies": {
     "@babel/core": "7.6.0",
@@ -37,7 +38,6 @@
     "babel-preset-react-app": "^9.0.2",
     "camelcase": "^5.2.0",
     "case-sensitive-paths-webpack-plugin": "2.2.0",
-    "command-line-args": "^5.1.1",
     "css-loader": "2.1.1",
     "dotenv": "6.2.0",
     "dotenv-expand": "5.1.0",
