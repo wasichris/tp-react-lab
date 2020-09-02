@@ -8,7 +8,7 @@
     "______uat": "===== 建置 UAT 環境 =====",
     "build-uat": "node scripts/build.js --mode=uat --rootPath=/sub/",
     "______prod": "===== 建置 PRODUCTION 環境 =====",
-    "build-prod": "node scripts/build.js --mode=prod --rootPath=/sub/tw/",
+    "build-prod": "node scripts/build.js --mode=prod --rootPath=/",
     "test": "node scripts/test.js"
   },
   "dependencies": {
