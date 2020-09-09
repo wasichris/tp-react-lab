@@ -9,6 +9,7 @@
 /coverage
 
 # production
+# 測試佈署到 HEROKU 上，所以要把 build 的東西一起推上去
 # /build
 
 # misc
