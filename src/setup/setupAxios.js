@@ -13,15 +13,21 @@ axios.interceptors.response.use(function (response) {
 }, function (error) {
   if (error.response) {
     // server responded status code falls out of the range of 2xx
-    const { message } = error.response.data
 
     switch (error.response.status) {
       case 400:
-        alert(`${error.response.status}: ${message || '資料錯誤'}。`)
+        {
+          const { message } = error.response.data
+          alert(`${error.response.status}: ${message || '資料錯誤'}。`)
+        }
         break
 
       case 401:
         alert(`${error.response.status}: 作業逾時或無相關使用授權，請重新登入`)
+        break
+
+      case 404:
+        alert(`${error.response.status}: 資料來源不存在`)
         break
 
       case 500:
