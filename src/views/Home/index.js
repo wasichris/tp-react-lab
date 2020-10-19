@@ -24,5 +24,6 @@ export default () =>
       <li><Link to='/p13'>Practice13 - 打造 Wizard 共用組件</Link></li>
       <li><Link to='/p14'>Practice14 - 打造 Modal 共用組件</Link></li>
       <li><Link to='/p15'>Practice15 - 打造 Upload File 共用組件</Link></li>
+      <li><Link to='/p17'>Practice17 - 測試 JWT access / refresh token</Link></li>
     </ul>
   </>

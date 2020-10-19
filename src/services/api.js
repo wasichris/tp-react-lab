@@ -1,4 +1,4 @@
-import { post, postFile } from '@src/utils/apiHelper'
+import { post, postFile, get } from '@src/utils/apiHelper'
 
 export default {
 
@@ -32,5 +32,19 @@ export default {
   /* 上傳檔案 */
   uploadImage: (formData) => {
     return postFile('/lab/uploadImage', formData)
+  },
+
+  /* 中台不同，主要是 refresh_token & access_token 測試使用 */
+  /* 登入 */
+  authenticate: ({ username, password }) => {
+    return post('/users/authenticate', { username, password })
+  },
+  /* 換發 access_token */
+  refreshToken: () => {
+    return post('/users/refresh-token')
+  },
+  /* 取的用戶名單 */
+  getUsers: () => {
+    return get('/users')
   }
 }

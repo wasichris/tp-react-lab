@@ -1,5 +1,6 @@
 import axios from 'axios'
 import constant from '@src/constants'
+import storage from '@src/services/storage'
 
 // 發送 request 需夾帶 cookie
 axios.defaults.withCredentials = true
@@ -12,7 +13,8 @@ const postFile = async (url, formData = {}) => {
       baseURL: constant.apiUrl,
       timeout: constant.timeout,
       headers: {
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'multipart/form-data',
+        Authorization: 'bearer ' + storage.token.value
       },
       responseType: 'json'
     }
@@ -32,6 +34,9 @@ const post = async (url, reqData) => {
     {
       baseURL: constant.apiUrl,
       timeout: constant.timeout,
+      headers: {
+        Authorization: 'bearer ' + storage.token.value
+      },
       responseType: 'json'
     }
   ).then(async (res) => {
@@ -51,6 +56,9 @@ const get = async (url, params) => {
       params,
       baseURL: constant.apiUrl,
       timeout: constant.timeout,
+      headers: {
+        Authorization: 'bearer ' + storage.token.value
+      },
       responseType: 'json'
     }
   ).then(async (res) => {
@@ -73,7 +81,18 @@ const errorHandle = (url, error) => {
   return Promise.reject(error)
 }
 
+const axiosInstance = axios.create({
+  baseURL: constant.apiUrl,
+  timeout: constant.timeout,
+  headers: {
+    Authorization: 'Bearer ' + storage.token.value, // 帶著 access token
+    'Content-Type': 'application/json',
+    accept: 'application/json'
+  }
+})
+
 export {
+  axiosInstance,
   post,
   postFile,
   get
