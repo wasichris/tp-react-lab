@@ -35,7 +35,6 @@ input {
   min-height: 100vh;
   color: $text-color;
   
-  overflow-x: hidden;
 }
 
 .app-logo {
@@ -92,12 +91,13 @@ input {
   display: flex;
   justify-content: center;
   flex: 1;
-  padding: 0px 20px 20px 20px;
 
   &__container {
     display: block;
     max-width: $app-width;
     width: 100%;
+    padding: 0px 20px 20px 20px;
+    min-width: 0; // flex佈局中，保持內容不超出容器的解決辦法
   }
 }
 
