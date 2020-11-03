@@ -116,20 +116,23 @@ npm run start
 
 &nbsp;
 ## 練習項目12 - 熟悉 Context 操作方式 ##
-![熟悉 styled-components 操作方式](src/assets/images/readme/practice12.png)  
+![熟悉 Context 操作方式](src/assets/images/readme/practice12.png)  
 
 &nbsp;
 ## 練習項目13 - 打造 Wizard 共用組件 ##
-![熟悉 styled-components 操作方式](src/assets/images/readme/practice13.png)  
+![打造 Wizard 共用組件](src/assets/images/readme/practice13.png)  
 
 &nbsp;
 ## 練習項目14 - 打造 Modal 共用組件 ##
-![熟悉 styled-components 操作方式](src/assets/images/readme/practice14.png)  
+![打造 Modal 共用組件](src/assets/images/readme/practice14.png)  
 
 &nbsp;
 ## 練習項目15 - 打造 Upload File 共用組件 ##
-![熟悉 styled-components 操作方式](src/assets/images/readme/practice15.png)  
+![打造 Upload File 共用組件](src/assets/images/readme/practice15.png)  
 
+&nbsp;
+## 練習項目15 - 打造 Tabs 共用組件 ##
+![打造 Tabs 共用組件](src/assets/images/readme/practice16.png)  
 
 &nbsp;
 ## 參考資料 ##

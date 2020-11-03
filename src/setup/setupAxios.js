@@ -41,7 +41,7 @@ axios.interceptors.response.use(function (response) {
     }
   } else {
     // Something happened in setting up the request that triggered an Error
-    if (error.code === 'ECONNABORTED' && error.message.indexOf('timeout') !== -1) {
+    if (error.code === 'ECONNABORTED' && error.message && error.message.indexOf('timeout') !== -1) {
       // request time out will be here
       alert('網路連線逾時，請點「確認」鍵後繼續使用。')
     } else {
