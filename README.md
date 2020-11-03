@@ -131,7 +131,7 @@ npm run start
 ![打造 Upload File 共用組件](src/assets/images/readme/practice15.png)  
 
 &nbsp;
-## 練習項目15 - 打造 Tabs 共用組件 ##
+## 練習項目16 - 打造 Tabs 共用組件 ##
 ![打造 Tabs 共用組件](src/assets/images/readme/practice16.png)  
 
 &nbsp;
