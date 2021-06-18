@@ -22,7 +22,7 @@ class Practice07Call01 extends React.Component {
     const hasContacts = contacts && contacts.length > 0
     return (
       <>
-        <h4> [練習1] 直接於組件 componentDidMount 中呼叫 API 取得資訊 </h4>
+        <h4> [練習1] 直接於組件 componentDidMount 中呼叫 API 來取得資訊 </h4>
         <table className='tp-table'>
 
           <thead>
