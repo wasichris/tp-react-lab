@@ -74,8 +74,10 @@ const backendLogout = async (token) => {
 //= ===============================================================
 
 // 事前準備：
-// 1. 載入 <script src="https://apis.google.com/js/platform.js" ></script>
-// 2. 初始 window.gapi.auth2.init()
+// 1. 於 Google Cloud Platform 建立專案，設定憑證 & OAuth 同意畫面
+//    https://console.cloud.google.com/apis/credentials?hl=zh-tw&project=react-lab-317206&folder=&organizationId=
+// 2. 載入 <script src="https://apis.google.com/js/platform.js" ></script>
+// 3. 初始 window.gapi.auth2.init()
 
 //= ===============================================================
 //= ===============================================================
@@ -163,7 +165,7 @@ const Practice17 = () => {
 
     // 清除前端登入資訊
     setIsBackendLogin(false)
-    window.sessionStorage.removeItem('token')
+    window.localStorage.removeItem('token')
     setLoginUser({
       id: '',
       name: '',
