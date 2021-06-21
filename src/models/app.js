@@ -52,7 +52,14 @@ function * initAppSaga ({ payload }) {
   try {
     console.log('%c init app ', 'background-color: #3A88AE; color: white;font-size: 14px; font-weight: bold;', `v${process.env.npm_package_version}`)
     // 進入 app 需要初始化的工作
-    // ....
+
+    // 初始 Google 第三方登入
+    window.gapi.load('auth2', function () {
+      // Retrieve the singleton for the GoogleAuth library and set up the client.
+      window.gapi.auth2.init({
+        client_id: '550888553528-l6mmk0up3vnr8mnvv2cojp69clgc8r9e.apps.googleusercontent.com'
+      })
+    })
   } catch (error) {
     // handle error instead of console log
     console.error('initAppSaga error:', error)
