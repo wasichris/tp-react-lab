@@ -148,7 +148,7 @@ const Practice17 = () => {
     // 1. Google API: https://oauth2.googleapis.com/tokeninfo?id_token=XYZ123
     // 2. JWT Website: https://jwt.io/
 
-    // 請求使用 Google idToken 登入後端系統 (驗證 idToken + 提供前後台溝通 token[後續判斷是否登入都是以此 token 決定])
+    // 請求使用 Google idToken 登入後端系統 (驗證 idToken 作為登入依據，並產出前後台溝通 token [後續判斷是否登入都是以此 token 決定])
     const { isLogin, token } = await backendLogin('google', user.mc.id_token)
     window.localStorage.setItem('token', token)
     setIsBackendLogin(isLogin)
