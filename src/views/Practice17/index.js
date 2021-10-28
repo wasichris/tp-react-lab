@@ -34,7 +34,7 @@ const backendLogin = async (loginType, idToken) => {
       console.log('%c userid ', 'background-color: #3A88AE; color: white;font-size: 14px; font-weight: bold;', user.id)
 
       // c. 將剛剛新增/取出的用戶視為登入
-      // 可能是產出一組後端與前端驗證的 token 並寫入 session 中，並 response 給前端此 token 來保存使用
+      // 產出一組本站後端與前端驗證的 token 並寫入 session 中，並 response 給前端此 token 來保存使用
       const token = 'ooxxoo'
       window.localStorage.setItem('server-token', token)
       response = { isLogin: true, token: token, msg: '登入成功' }
@@ -135,13 +135,14 @@ const Practice17 = () => {
     // Google 登入成功取得用戶資料
 
     const profile = user.getBasicProfile()
+    const authResponse = user.getAuthResponse(true)
     setLoginUser({
       id: profile.getId(), // Do not send to your backend! Use an ID token instead.
       name: profile.getName(),
       imgUrl: profile.getImageUrl(),
       email: profile.getEmail(), // This is null if the 'email' scope is not present.
-      accessToken: user.mc.access_token,
-      idToken: user.mc.id_token // JWT
+      accessToken: authResponse.access_token,
+      idToken: authResponse.id_token // JWT
     })
 
     // 針對 id_token 資訊，前端可透過以下兩種方式簡易解析內容
@@ -149,7 +150,7 @@ const Practice17 = () => {
     // 2. JWT Website: https://jwt.io/
 
     // 請求使用 Google idToken 登入後端系統 (驗證 idToken 作為登入依據，並產出前後台溝通 token [後續判斷是否登入都是以此 token 決定])
-    const { isLogin, token } = await backendLogin('google', user.mc.id_token)
+    const { isLogin, token } = await backendLogin('google', authResponse.id_token)
     window.localStorage.setItem('token', token)
     setIsBackendLogin(isLogin)
   }
