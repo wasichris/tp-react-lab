@@ -12,7 +12,7 @@ switch (process.env.MODE) {
     break
   case 'prod':
     // PRODUCTION
-    constant = { ...constant, apiUrl: 'https://react-lab-mock-api.herokuapp.com/api/' }
+    constant = { ...constant, apiUrl: 'https://tp-react-lab-mock-api.vercel.app/api/' }
 
     break
 }
