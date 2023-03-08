@@ -17,7 +17,9 @@ a {
   outline: none;
 }
 
-p, ul, li {
+p,
+ul,
+li {
   line-height: 1.5;
 }
 
@@ -34,7 +36,7 @@ input {
 
   min-height: 100vh;
   color: $text-color;
-  
+
 }
 
 .app-logo {
@@ -74,7 +76,8 @@ input {
 
   &__nav-item {
     margin-left: 10px;
-    & > a {
+
+    &>a {
       text-decoration: none;
     }
 
@@ -119,12 +122,14 @@ input {
 
 .tp-loader {
   padding: 20px 0;
+
   &__container {
     display: inline-block;
     position: relative;
     width: 40px;
     height: 10px;
   }
+
   &__item {
     position: absolute;
     top: 2px;
@@ -133,18 +138,22 @@ input {
     border-radius: 50%;
     background: $loader-bg-color;
     animation-timing-function: cubic-bezier(0, 1, 1, 0);
+
     &:nth-child(1) {
       left: 1px;
       animation: lds-ellipsis1 0.6s infinite;
     }
+
     &:nth-child(2) {
       left: 1px;
       animation: lds-ellipsis2 0.6s infinite;
     }
+
     &:nth-child(3) {
       left: 16px;
       animation: lds-ellipsis2 0.6s infinite;
     }
+
     &:nth-child(4) {
       left: 29px;
       animation: lds-ellipsis3 0.6s infinite;
@@ -155,6 +164,7 @@ input {
     0% {
       transform: scale(0);
     }
+
     100% {
       transform: scale(1);
     }
@@ -164,6 +174,7 @@ input {
     0% {
       transform: scale(1);
     }
+
     100% {
       transform: scale(0);
     }
@@ -173,6 +184,7 @@ input {
     0% {
       transform: translate(0, 0);
     }
+
     100% {
       transform: translate(15px, 0);
     }
@@ -214,7 +226,9 @@ input {
   width: 100%;
   text-align: center;
 
-  &__th, &__tr, &__td {
+  &__th,
+  &__tr,
+  &__td {
     border: $border;
     padding: 5px;
   }
@@ -237,12 +251,13 @@ input {
 
   &__label {
     width: 25%;
-   font-weight: bold;
+    font-weight: bold;
   }
 
   &__field {
-   flex: 1;
-    > input {
+    flex: 1;
+
+    >input {
       width: 100%
     }
   }
@@ -258,7 +273,7 @@ input {
 .tp-count-down-timer {
   font-family: 'Share Tech Mono', monospace;
   color: #daf6ff;
-  text-shadow: 0 0 10px rgba(10, 175, 230, 1),  0 0 10px; 
+  text-shadow: 0 0 10px rgba(10, 175, 230, 1), 0 0 10px;
   margin: 10px 0;
   padding: 0 10px;
   border: 1px solid;
@@ -279,6 +294,15 @@ input {
 .tp-tabs {
   border: 1px solid #ddd;
   border-radius: 4px;
+}
+
+.tp-semi-circle {
+  height: 100%;
+  width: 100%;
+
+  &__path-blue {
+    transition: stroke-dashoffset 0.5s;
+  }
 }
 
 // =================== other ======================

@@ -6,5 +6,7 @@
     /* Enable Emmet support for JSX */
     "emmet.includeLanguages": {
         "javascript": "javascriptreact"
-     }
+    },
+    "javascript.format.insertSpaceAfterConstructor": true,
+    "javascript.format.insertSpaceBeforeFunctionParenthesis": true,
 }
